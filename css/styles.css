@@ -1,0 +1,65 @@
+/*upravene html element DOM*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+nav li:hover {
+    border-bottom: white solid;
+}
+
+/*header classes*/
+
+header.bg-gradient-red-black {
+    height: 12vh;
+    width: 100%;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    background-color: #10070C;
+    background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
+    background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
+    background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
+    border-bottom: #10070C solid 0.1em;
+}
+
+.font-h {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: white;
+}
+
+.logo img {                 /*toto říká, že img pod classou .logo*/
+    padding-left: 15px;
+    height: 10vh; 
+    max-width: 100%;        /* Zabraňuje přetékání šířky */
+    align-self: top;
+}
+
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: contrast(120%);
+}
+
