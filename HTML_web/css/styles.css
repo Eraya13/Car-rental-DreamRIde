@@ -63,3 +63,6 @@ header.bg-gradient-red-black {
     filter: contrast(120%);
 }
 
+body {
+    background-color: black;
+}
