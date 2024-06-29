@@ -1,27 +1,32 @@
 /*upravene html element DOM*/
     /*default styl webu*/
-h1 {
-    font-optical-sizing: auto;
-    font-weight: 1100;
-    font-style: normal;
-    font-size: 50px;
-    text-align: center;
-}
+
+/*"Inter", sans-serif*/
+
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Inter", sans-serif;
+    font-family: sans-serif;
+    margin-left: 5rem;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+/*header classes*/
+
+header {
+    height: 6rem;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid white;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-    gap: 1.5em;
+    gap: 3rem;
 }
 
 nav a {
@@ -38,17 +43,14 @@ nav li:hover {
     border-bottom: white solid;
 }
 
-/*header classes*/
 
-header {
-    height: 12vh;
-    width: 100%;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-evenly;
-    align-items: center;
+
+.header-font {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.8rem;
+    color: white;
 }
 
 .bg-gradient-red-black {
@@ -56,7 +58,6 @@ header {
     background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
     background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
     background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
-    border-bottom: #10070C solid 0.1em;
 }
 
 .bg-gradient-red-black-reverse {
@@ -68,6 +69,47 @@ header {
 }
 
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.p-title {
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: bold;
+    font-size: 2.8rem;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    color: inherit;
+    height: 6rem;
+    display: flex;
+    align-items: center;        /* Vertikální zarovnání na střed */
+}
+
+p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: left;
+    margin-left: 6rem;
+}
+
+
+.classic-text {   
+    padding-top: 8rem;
+    background-image: url('../images/grey-light2jpg.jpg');
+    color:#10070C;
+}
+
+
+
+
 footer {
     height: 40vh;
     width: 100%;
@@ -76,23 +118,17 @@ footer {
     /*tyto prvky se změní - budu chtít sloupce*/
 }
 
-.font-h {
-    font-family: "Inter", sans-serif;
-    font-size: 1.8em;
-    font-weight: 600;
-    color: white;
-}
 
 .logo img {                 /*toto říká, že img pod classou .logo*/
     padding-left: 15px;
-    height: 10vh; 
+    height: 6rem; 
     max-width: 100%;        /* Zabraňuje přetékání šířky */
     align-self: top;
 }
 
 .bigger-logo img {
     padding-left: 15px;
-    height: 20vh; 
+    height: 10rem; 
     max-width: 100%; 
 }
 
