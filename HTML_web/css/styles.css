@@ -3,12 +3,42 @@
 
 /*"Inter", sans-serif*/
 
+.logo img {                 /*toto říká, že img pod classou .logo*/
+    padding-left: 15px;
+    height: 6rem; 
+    max-width: 100%;        /* Zabraňuje přetékání šířky */
+    align-self: top;
+}
+
+.bigger-logo img {
+    padding-left: 10rem;
+    height: 10rem; 
+    max-width: 100%; 
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: contrast(120%);
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
-    margin-left: 5rem;
+    /*margin-left: 5rem;*/
 }
 
+.p-title {
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 2.8rem;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    color: inherit;
+    height: 6rem;
+    display: flex;
+    text-align: left;
+    padding-left: 5rem;
+    align-items: center;        /* Vertikální zarovnání na střed */
+}
 /*header classes*/
 
 header {
@@ -23,10 +53,13 @@ header {
     border-bottom: 2px solid white;
 }
 
-nav ul {
-    list-style-type: none;
+header nav ul {         /*pro header je jiná nez u footer*/
     display: flex;
     gap: 3rem;
+}
+
+nav ul {
+    list-style-type: none;
 }
 
 nav a {
@@ -35,15 +68,17 @@ nav a {
 }
 
 nav li {
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 1rem;
 }
 
-nav li:hover {
+header nav li:hover {
     border-bottom: white solid;
 }
 
-
+footer nav li:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
 
 .header-font {
     font-family: "Inter", sans-serif;
@@ -68,26 +103,11 @@ nav li:hover {
     border-bottom: #10070C solid 0.1em;
 }
 
-
 body {
     margin: 0;
     padding: 0;
     background-color: black;
     color: white;
-}
-
-.p-title {
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: bold;
-    font-size: 2.8rem;
-    text-align: left;
-    text-decoration: underline;
-    text-underline-offset: 7px;
-    color: inherit;
-    height: 6rem;
-    display: flex;
-    align-items: center;        /* Vertikální zarovnání na střed */
 }
 
 p {
@@ -96,10 +116,16 @@ p {
     font-style: normal;
     font-size: 1.5rem;
     line-height: 1.8rem;
-    text-align: left;
     margin-left: 6rem;
 }
 
+.a-left {
+    text-align: left;
+}
+
+.sm {
+    font-size: 1rem;
+}
 
 .classic-text {   
     padding-top: 8rem;
@@ -107,51 +133,32 @@ p {
     color:#10070C;
 }
 
-
-
-
+/*-----footer settings-----*/
 footer {
     height: 40vh;
     width: 100%;
-    padding-left: 2vh;
-    padding-right: 2vh;
     /*tyto prvky se změní - budu chtít sloupce*/
 }
 
-
-.logo img {                 /*toto říká, že img pod classou .logo*/
-    padding-left: 15px;
-    height: 6rem; 
-    max-width: 100%;        /* Zabraňuje přetékání šířky */
-    align-self: top;
+.footer-nav {
+    padding: 0.5rem;
 }
 
-.bigger-logo img {
-    padding-left: 15px;
-    height: 10rem; 
-    max-width: 100%; 
+.footer-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-.logo:hover {
-    transform: scale(1.05);
-    filter: contrast(120%);
+.createdBy {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    background-color: #444;
+    grid-column: span 3;            /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
 }
 
-
-
-/*footer*/
-/*
-.container {
-    display: flex;
-    flex-direction: column;
+.alert-color {
+    background-color: purple;
 }
-
-.column-section {
-    flex: 1;
-    flex-direction: row;
-    background: lightgreen;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid green;
-}*/
