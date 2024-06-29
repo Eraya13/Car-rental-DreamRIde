@@ -1,7 +1,21 @@
 /*upravene html element DOM*/
+    /*default styl webu*/
+h1 {
+    font-optical-sizing: auto;
+    font-weight: 1100;
+    font-style: normal;
+    font-size: 50px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 nav ul {
@@ -26,7 +40,7 @@ nav li:hover {
 
 /*header classes*/
 
-header.bg-gradient-red-black {
+header {
     height: 12vh;
     width: 100%;
     padding-left: 2vh;
@@ -35,12 +49,31 @@ header.bg-gradient-red-black {
     box-sizing: border-box;
     justify-content: space-evenly;
     align-items: center;
-    
+}
+
+.bg-gradient-red-black {
     background-color: #10070C;
     background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
     background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
     background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
     border-bottom: #10070C solid 0.1em;
+}
+
+.bg-gradient-red-black-reverse {
+    background-color: #a50505;
+    background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
+    background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
+    background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
+    border-bottom: #10070C solid 0.1em;
+}
+
+
+footer {
+    height: 40vh;
+    width: 100%;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    /*tyto prvky se změní - budu chtít sloupce*/
 }
 
 .font-h {
@@ -57,12 +90,32 @@ header.bg-gradient-red-black {
     align-self: top;
 }
 
+.bigger-logo img {
+    padding-left: 15px;
+    height: 20vh; 
+    max-width: 100%; 
+}
+
 
 .logo:hover {
     transform: scale(1.05);
     filter: contrast(120%);
 }
 
-body {
-    background-color: black;
+
+
+/*footer*/
+/*
+.container {
+    display: flex;
+    flex-direction: column;
 }
+
+.column-section {
+    flex: 1;
+    flex-direction: row;
+    background: lightgreen;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid green;
+}*/
