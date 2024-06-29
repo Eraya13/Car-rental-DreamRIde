@@ -110,6 +110,20 @@ body {
     color: white;
 }
 
+.p-title {
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: bold;
+    font-size: 2.8rem;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    color: inherit;
+    height: 6rem;
+    display: flex;
+    align-items: center;        /* Vertikální zarovnání na střed */
+}
+
 p {
     font-family: "Inter", sans-serif;
     font-weight: 400;
