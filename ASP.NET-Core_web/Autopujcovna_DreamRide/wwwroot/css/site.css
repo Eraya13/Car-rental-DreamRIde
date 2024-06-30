@@ -133,7 +133,7 @@ footer {
     padding: 0.5rem;
 }
 
-footer h2 {
+footer h2 {         /*stil sans serif*/
     font-weight: 400;
     font-size: 2rem;
 }
@@ -150,7 +150,7 @@ footer h2 {
 }
 
 .moto-font {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: Helvetica;
     font-weight: 500;
     font-size: 1.5rem;
     padding-top: 1rem;
@@ -163,7 +163,7 @@ footer {
 
 .footer-links {
     font-size: 1.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif
+    font-family: 'Inter', sans-serif;
 }
 
 footer nav li:hover {
