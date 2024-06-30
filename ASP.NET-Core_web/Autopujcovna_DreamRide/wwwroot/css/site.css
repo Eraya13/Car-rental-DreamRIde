@@ -1,0 +1,225 @@
+﻿.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/*My css*/
+/*upravene html element DOM*/
+/*default styl webu*/
+
+/*"Logo settings*/
+
+.logo img { /*toto říká, že img pod classou .logo*/
+    padding-left: 10rem;
+    height: 6rem;
+    max-width: 100%; /* Zabraňuje přetékání šířky */
+}
+
+.bigger-logo img {
+    height: 10rem;
+    max-width: 100%;
+}
+
+/*hover thing*/
+.bigger-logo:hover,
+.logo:hover {
+    transform: scale(1.05);
+    filter: contrast(120%);
+}
+
+a:hover {
+    color:currentColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+
+.p-title {
+    font-weight: 600;
+    font-size: 2.8rem;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    color: inherit;
+    padding-left: 5rem;
+    display: flex;
+    align-items: center; /* Vertikální zarovnání na střed */
+}
+
+/*header classes*/
+header {
+    height: 6rem;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid white;
+}
+
+    header nav ul { /*pro header je jiná nez u footer*/
+        display: flex;
+        gap: 3rem;
+    }
+
+nav ul {
+    list-style-type: none;
+    padding-right: 3rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer nav li {
+    padding-bottom: 1rem;
+}
+
+.gap {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+header nav li:hover {
+    border-bottom: white solid;
+}
+
+.header-font {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.bg-gradient-red-black {
+    background-color: #10070C;
+    background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
+    background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
+    background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
+}
+
+.bg-gradient-red-black-reverse {
+    background-color: #a50505;
+    background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
+    background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
+    background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
+}
+
+.classic-text {
+    padding: 2rem 0 8rem 0;
+    background-image: url('../images/grey-bg.jpg');
+    color: #10070C;
+}
+
+article p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-left: 6rem;
+}
+
+/*-----footer settings-----*/
+footer {
+    width: 100%;
+}
+
+.footer-nav {
+    padding: 0.5rem;
+}
+
+footer h2 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moto-font {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+footer {
+    width: 100%;
+    margin-top: auto; /* footer je tlačen dolů*/
+}
+
+.footer-links {
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif
+}
+
+footer nav li:hover {
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+
+.createdBy {
+    text-align: center;
+    padding: 1rem;
+    background-color: #444;
+    grid-column: span 3; /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
+}
+
+
+/*general settings*/
+
+.alert-color {
+    background-color: purple;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.p-title {
+    height: 6rem;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 2.8rem;
+    text-underline-offset: 7px;
+    text-decoration: underline;
+    color: inherit;
+    display: flex;
+    text-align: left;
+    align-items: center; /* Vertikální zarovnání na střed */
+}
+
+p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-left: 6rem;
+}
+
+
+.a-left {
+    text-align: left;
+}
+
+.sm {
+    font-size: 1rem;
+}
