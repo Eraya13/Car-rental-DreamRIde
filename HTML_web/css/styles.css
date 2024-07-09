@@ -76,6 +76,69 @@ header nav li:hover {
     color: white;
 }
 
+    /*form classes*/
+/*margin 4: T R B L -- like clock*/
+/*margin 2: TB RL;*/
+.form-spacing {
+    margin: 0 0 10rem 4rem;
+    padding: 3rem 3rem;
+}
+
+.label-names label {
+    font-size: 1.5rem;
+}
+
+.text-red {
+    color: #b50909
+}
+
+/*section-contact*/
+.section-btn {
+    background-color: #b50909;
+    color:white;
+    font-size: 1.3rem;
+    
+}
+
+.section-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.form-title {
+    font-weight: 600;
+    text-align: center;
+}
+
+.custom-select-width {
+    width: calc(25.33% - 10px); /* Počítáme s tím, že chceme, aby zabíralo třetinu a mezi tím měl prostor */
+    margin-right: 10px; /* Prostor mezi výběrem předvolby a číslem */
+}
+
+.container-flex-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 15rem;
+}
+
+.article-member {
+    flex: 1;
+}
+
+.classic-text {   
+    padding: 2rem 0 8rem 0;
+    background-image: url('../images/grey-light2jpg.jpg');
+    color:#10070C;
+}
+
+.bg-grey {
+    background-color: grey;
+}
+
+.bg-black {
+    background-color: black;
+}
+
 .bg-gradient-red-black {
     background-color: #10070C;
     background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
@@ -88,20 +151,6 @@ header nav li:hover {
     background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
     background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
     background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
-}
-
-.classic-text {   
-    padding: 2rem 0 8rem 0;
-    background-image: url('../images/grey-light2jpg.jpg');
-    color:#10070C;
-}
-
-article p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    margin-left: 6rem;
 }
 
 /*-----footer settings-----*/
@@ -183,7 +232,7 @@ body {
     align-items: center;        /* Vertikální zarovnání na střed */
 }
 
-p {
+.p-normal {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-style: normal;

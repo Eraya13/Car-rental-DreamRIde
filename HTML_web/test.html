@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+
+    <title>Test</title>
+</head>
+<body>
+    <article class="classic-text container-flex-row">
+        <section class="form-spacing bg-grey container article-member">
+        <form>
+                <!-- Name + surname -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="name">Jméno</label>
+                        <input type="email" class="form-control" id="name" aria-describedby="popisEmailu" placeholder="Vaše jméno">
+                    </div>
+                    <div class="col-2">
+                        <label for="surname">Přijmení</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Vaše příjmení">
+                    </div>
+                </div>
+                    <!-- Email -->
+                <div class="row">
+                    <div class="col-6">
+                        <label>Doplňující informace</label>
+                        <textarea class="form-control rounded-0 border-0" id="additionalInfo" rows="4" placeholder="Napiště sem, co bychom ještě měli vědět, případně zanechte pole prázdné..."></textarea>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <label for="submit-button"></label>
+                    <button type="submit" class="btn btn-primary">Odeslat návrh</button>
+                </div>
+            </form>
+        </section>
+        <section class="article-member">
+            <h1>Kontakt</h1>
+            <p>My introduction</p>
+            <p>My introduction</p>
+        </section >
+    </article>        
+</body>
+</html>
