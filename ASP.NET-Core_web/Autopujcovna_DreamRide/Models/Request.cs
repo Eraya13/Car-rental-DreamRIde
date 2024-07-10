@@ -7,6 +7,7 @@ namespace Autopujcovna_DreamRide.Models
         public int Id { get; set; }
         public int ClientId { get; set; }
         public int CarId { get; set; }
+
         //public string ExpType { get; set; }             // typ půjčení - todo - zatím nabízet jen půjčení od do
         [StringLength (500, ErrorMessage = "Zpráva nesmí být delší než 500 znaků")]
         public string Note { get; set; }
