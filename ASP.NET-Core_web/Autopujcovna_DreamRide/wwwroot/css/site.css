@@ -2,9 +2,10 @@
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /*My css*/
@@ -35,8 +36,23 @@ a:hover {
     color:currentColor;
 }
 
+h1 {
+    padding-top: 2rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
+}
+
+/*zajišťuje aby se roztáhli všechny prvky a nezůstalo background body vidět*/
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1; /* This makes sure the main content takes up the available space */
 }
 
 .p-title {
@@ -127,6 +143,7 @@ article p {
 /*-----footer settings-----*/
 footer {
     width: 100%;
+    border-top: 2px solid white;
 }
 
 .footer-nav {

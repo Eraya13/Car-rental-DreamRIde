@@ -15,63 +15,67 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />  
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />       @*nezapomenout styly nakopirovat sem - toto přepíše bootstrap*@
-    <link rel="stylesheet" href="~/Autopujcovna_DreamRide.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header class="bg-gradient-red-black header-font">
-        <div class="logo">
-            <a asp-controller="Home" asp-action="Index">
-                <img src="~/images/logo.png" alt="Logo">
-            </a>
-        </div>
-        <nav>
-            <ul class="navbar nav flex-grow-1">
-                <li><a asp-controller="Home" asp-action="CarMenu">Nabídka aut</a></li>
-                <li><a asp-controller="Home" asp-action="Services">Naše služby</a></li>
-                <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
-                <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
-                <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <footer class="footer-grid bg-gradient-red-black-reverse">
-        <section class="label-container">
-            <div class="bigger-logo">
+    <div class="page-container">
+        <header class="bg-gradient-red-black header-font">
+            <div class="logo">
                 <a asp-controller="Home" asp-action="Index">
-                    <img src="~/images/logo.png" alt="Logo Dream Ride">
+                    <img src="~/images/logo.png" alt="Logo">
                 </a>
             </div>
-            <div><p class="moto-font">Proměňujeme touhy po jízdě v nezapomenutlné zážitky</p></div>
-        </section>
-        <section class="label-container">
-            <nav class="footer-nav">
-                <h2 class="gap">Dream Ride</h2>
-                <ul class="footer-links">
-                    <!-- Seznam polozek - lze přiradit classu-->
-                    <li><a asp-controller="Home" asp-action="Services">Naše služby</a>
-                    <li><a asp-controller="Car" asp-action="Index">Nabídka aut</a></li>
+            <nav>
+                <ul class="navbar nav flex-grow-1">
+                    <li><a asp-controller="Home" asp-action="CarMenu">Nabídka aut</a></li>
+                    <li><a asp-controller="Home" asp-action="Services">Naše služby</a></li>
+                    <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
+                    <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
                     <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
                 </ul>
             </nav>
-        </section>
-        <section class="label-container">
-            <nav>
-                <h2 class="gap">Informace</h2>
-                <ul class="footer-links">
-                    <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li>
-                    <li><a asp-controller="Home" asp-action="Terms">Obchodní podmínky</a></li>
-                </ul>
-            </nav>
-        </section>
-        <section class="createdBy">
-            <p class="sm">Created by &copy;Adéla Srbová @DateTime.Now.Year for <a href="https://itnetwork.cz"/>Itnetwork.cz</p>
-        </section>
-    </footer>
+        </header>
+        <div class="container">
+            <header>
+                <h1>@ViewData["Title"]</h1>     @*generování nadpisu z ViewData*@
+            </header>
+            <main role="main" class="content-wrap">
+                @RenderBody()
+            </main>
+        </div>
+        <footer class="footer-grid bg-gradient-red-black-reverse">
+            <section class="label-container">
+                <div class="bigger-logo">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/logo.png" alt="Logo Dream Ride">
+                    </a>
+                </div>
+                <div><p class="moto-font">Proměňujeme touhy po jízdě v nezapomenutlné zážitky</p></div>
+            </section>
+            <section class="label-container">
+                <nav class="footer-nav">
+                    <h2 class="gap">Dream Ride</h2>
+                    <ul class="footer-links">
+                        <!-- Seznam polozek - lze přiradit classu-->
+                        <li><a asp-controller="Home" asp-action="Services">Naše služby</a>
+                        <li><a asp-controller="Car" asp-action="Index">Nabídka aut</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="label-container">
+                <nav>
+                    <h2 class="gap">Informace</h2>
+                    <ul class="footer-links">
+                        <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li>
+                        <li><a asp-controller="Home" asp-action="Terms">Obchodní podmínky</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="createdBy">
+                <p class="sm">Created by &copy;Adéla Srbová @DateTime.Now.Year for <a href="https://itnetwork.cz"/>Itnetwork.cz</p>
+            </section>
+        </footer>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
