@@ -1,3 +1,6 @@
+﻿using Autopujcovna_DreamRide.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Autopujcovna_DreamRide
 {
     public class Program
@@ -8,6 +11,12 @@ namespace Autopujcovna_DreamRide
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Konfigurace připojení databáze
+            // connectionString = bere cestu databáze z appsettings
+            var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
