@@ -26,7 +26,8 @@
             </div>
             <nav>
                 <ul class="navbar nav flex-grow-1">
-                    <li><a asp-controller="Home" asp-action="CarMenu">Nabídka aut</a></li>
+                    @* použití viewu jiného controlleru -> navBar přesměruje na jeden view a ten dále bude komunikovat s dalšími (budou na sebe třeba navazovat odkazy)*@
+                    <li><a asp-controller="Cars" asp-action="Create">Nabídka aut</a></li>
                     <li><a asp-controller="Home" asp-action="Services">Naše služby</a></li>
                     <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
                     <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
