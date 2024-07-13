@@ -28,7 +28,7 @@
                 <ul class="navbar nav flex-grow-1">
                     @* použití viewu jiného controlleru -> navBar přesměruje na jeden view a ten dále bude komunikovat s dalšími (budou na sebe třeba navazovat odkazy)*@
                     <li><a asp-controller="Cars" asp-action="Create">Nabídka aut</a></li>
-                    <li><a asp-controller="Home" asp-action="Services">Naše služby</a></li>
+                    <li><a asp-controller="Requests" asp-action="CarReservation">Rezervace Auta</a></li>
                     <li><a asp-controller="Account" asp-action="Register">Přihlášení</a></li>
                     <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
                     <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
@@ -36,11 +36,11 @@
                 </ul>
             </nav>
         </header>
-        <div class="container">
-            <header>
-                <h1>@ViewData["Title"]</h1>     @*generování nadpisu z ViewData*@
+        <div class="main-container">
+            <header class="title-header">
+                <h1 class="p-title">@ViewData["Title"]</h1>     @*generování nadpisu z ViewData*@
             </header>
-            <main role="main" class="content-wrap">
+            <main class="content-wrap">
                 @RenderBody()
             </main>
         </div>
@@ -51,7 +51,7 @@
                         <img src="~/images/logo.png" alt="Logo Dream Ride">
                     </a>
                 </div>
-                <div><p class="moto-font">Proměňujeme touhy po jízdě v nezapomenutlné zážitky</p></div>
+                <div><p class="moto-font">Proměňujeme touhy po jízdě v nezapomenutelné zážitky</p></div>
             </section>
             <section class="label-container">
                 <nav class="footer-nav">
