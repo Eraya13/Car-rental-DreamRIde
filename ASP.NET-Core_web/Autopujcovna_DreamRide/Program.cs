@@ -1,5 +1,6 @@
 ﻿using Autopujcovna_DreamRide.Data;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;            // všechny tyto knihovny musí být přítomny!!!
+using Microsoft.AspNetCore.Identity;
 
 namespace Autopujcovna_DreamRide
 {
@@ -17,6 +18,9 @@ namespace Autopujcovna_DreamRide
             var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>();
 
             var app = builder.Build();
 
