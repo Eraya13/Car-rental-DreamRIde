@@ -57,12 +57,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-title {
     font-weight: 600;
-    font-size: 2.8rem;
+    font-size: 3.5rem;
+    font-style: bold;
     text-decoration: underline;
     text-underline-offset: 7px;
     color: inherit;
     padding-left: 5rem;
+    height: 7rem;
     display: flex;
+    text-align: left;
     align-items: center; /* Vertikální zarovnání na střed */
 }
 
@@ -112,6 +115,120 @@ header nav li:hover {
     color: white;
 }
 
+
+/*Article / section classes*/
+.article-spacing {
+    padding: 4rem 6rem;
+}
+
+.article-member {
+    flex: 1;
+}
+
+.txt-content {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+}
+
+.section-h1 {
+    font-size: 3rem;
+    padding-bottom: 4rem;
+}
+
+.section-h2 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+/***form classes***/
+
+.form-title {
+    font-weight: 600;
+    text-align: center;
+}
+
+.label-names label {
+    font-size: 1.5rem;
+}
+
+.text-red {
+    color: #b50909
+}
+
+.text-white {
+    color: white;
+}
+
+/**Overide bootstrap form-button-shadow*/
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-select:focus {
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-check-input:focus {
+    border-color: #080808;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: #b50909;
+    border-color: #ef7f7f;
+}
+
+.section-btn { /*section-contact*/
+    background-color: #b50909;
+    color: white;
+    font-size: 1.7rem;
+}
+
+    .section-btn:hover {
+        background-color: black;
+        color: white;
+    }
+
+.container-flex-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 10rem;
+}
+
+/*margin 4: T R B L -- like clock*/
+/*margin 2: TB RL;*/
+.form-spacing {
+    padding: 3rem 3rem;
+}
+
+.bg-content {
+    background-image: url('../images/grey-light2jpg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #10070C;
+    display: flex;
+}
+
+/**/
+.bg-grey {
+    background-color: grey;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+
 .bg-gradient-red-black {
     background-color: #10070C;
     background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
@@ -126,19 +243,13 @@ header nav li:hover {
     background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
 }
 
-.classic-text {
-    padding: 2rem 0 8rem 0;
-    background-image: url('../images/grey-bg.jpg');
-    color: #10070C;
-}
-
-article p {
+/*article p {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 1.7rem;
     margin-left: 6rem;
-}
+}*/
 
 /*-----footer settings-----*/
 footer {
