@@ -30,70 +30,85 @@
 
     <!-- Tady vzdy Title -p-title -->
      <h1 class="p-title sm-left-pd">Kontakt</h1>
-     <article class="classic-text a-left container-flex-row">
-        <section class="form-spacing bg-grey container section-member">
+     <article class="a-left bg-content article-spacing container-flex-row">
+        <section class="form-spacing bg-grey container article-member">
             <form class="label-names">
-                <h1 class="text-red form-title">Návrh na rezervaci auta</h1>
+                <h1 class="form-title">Návrh na rezervaci auta</h1>
                 <!-- Name + surname -->
                 <div class="row">
                     <div class="col-6 px-4 my-3">
                         <label for="name">Jméno</label>
-                        <input type="email" class="form-control form-control-lg" id="name" aria-describedby="popisEmailu" placeholder="Vaše jméno">
+                        <input type="email" class="form-control" id="name" aria-describedby="popisEmailu" placeholder="Vaše jméno">
                     </div>
                     <div class="col-6 px-4 my-3">
                         <label for="surname">Přijmení</label>
-                        <input type="text" class="form-control-lg form-control" id="surname" placeholder="Vaše příjmení">
+                        <input type="text" class="form-control" id="surname" placeholder="Vaše příjmení">
                     </div>
                 </div>
                 <!-- Predvolba + tel. number + email-->
                 <div class="row">
-                    <div class="col-6 px-4 my-3"> 
-                        <div>
-                            <label for="telefon" class="form-label m-0">Telefonní číslo</label>
-                            <div class="input-group">
-                                <select class="form-select form-select-lg custom-select-width" id="predvolba">
-                                    <option selected value="cz">+420</option>
-                                    <option value="sk">+421</option>
-                                </select>
-                                <input type="tel" class="form-control form-control-lg" id="telefon">
-                            </div>
-                        </div>                   
+                    <label for="telefon" class="px-4 mt-3">Telefonní číslo</label>
+                    <div class="col-4 px-4 mt-1 my-3">
+                        <select class="form-select" id="predvolba">
+                            <option selected value="cz">+420</option>
+                            <option value="sk">+421</option>
+                        </select>
                     </div>
-                    <!-- Email -->
-                    <div class="col-6 px-4 my-3">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control form-control-lg" id="email" aria-describedby="popisEmailu" placeholder="Ve tvaru: franta@gmail.com">
+                    <div class="col-8 mt-1 my-3">
+                        <input type="tel" class="form-control" id="telefon" placeholder="722 182 777">
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Email -->
+                    <div class="col-12 px-4 my-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="popisEmailu" placeholder="Ve tvaru: franta@gmail.com">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- na label dáme vždy tuto classu!! -->
+                        <label class="px-4 mt-3">Chci být kontaktován:</label>
+                        <div class="col-12 my-1">
+                            <label class="form-check-label">
+                                <input class="form-check-input mx-5" type="radio" name="contact-way" id="contact-way" value="telephone" checked>
+                                telefonicky
+                            </label>
+                        </div>
+                        <div class="col-12 my-1">
+                            <label class="form-check-label">
+                                <input class="form-check-input mx-5" type="radio" name="contact-way" id="contact-way" value="email" checked>
+                                emailem
+                            </label>
+                        </div>
+                </div>
+
+                <div class="row">
                     <div class="col-12 px-4 my-3">
                         <label for="car">Auto</label>
-                        <select class="form-select form-select-lg" id="car">
+                        <select class="form-select" id="car">
                             <option selected value="1">Audi TT TSFI 2.0 2012</option>
                             <option value="2">BMW 3 Series 320i 2019</option>
                             <option value="3">Mercedes-Benz S-Class 350 2018</option>
                         </select>
                     </div>
                 </div>
-
+                <!-- datum od / do -->
                 <div class="row">
-                    <!-- na label dáme vždy tuto classu!! -->
-                    <div class="col-12 my-3">
-                        <label class="form-check-label">
-                            <span class="px-4">Chci být kontaktován: </span><input class="form-check-input" type="radio" name="contact-way" id="contact-way" value="telephone" checked>
-                            telefonicky
-                        </label>
-                        <span class="mx-5"></span>
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="contact-way" id="contact-way" value="email" checked>
-                            emailem
-                        </label>
+                    <div class="col-6 ps-4 my-3">
+                        <label for="datePicker">Od</label>
+                        <input type="date" class="form-control" id="datePicker">
+                      </div>
+                    <div class="col-6 pe-4 my-3">
+                        <label for="datePicker">Do</label>
+                        <input type="date" class="form-control" id="datePicker">
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12 px-4 my-3">
                         <label>Doplňující informace</label>
-                        <textarea class="form-control form-control-lg border-0" id="additionalInfo" rows="3" placeholder="Napiště sem, co bychom ještě měli vědět, případně zanechte pole prázdné..."></textarea>
+                        <textarea class="form-control border-0" id="additionalInfo" rows="4" placeholder="Napiště sem, co bychom ještě měli vědět, případně zanechte pole prázdné..."></textarea>
                     </div>
                 </div>
                 <div class="text-end my-3">
@@ -102,13 +117,22 @@
                 </div>
             </form>
         </section>
-        <section class="article-member">
-            <h1>Kontakt</h1>
-            <p>My introduction</p>
-            <p>My introduction</p>
-            <p>EVOLVING some creatures... This is lucky day!</p>
-            <p>Always stubborn never give up!</p>
-        </section >
+        <section class="form-spacing article-member">
+            <h1 class="section-h1">... Nebo nám přímo zavolejte</h1>
+            <h2 class="section-h2">Filip Steinmetz</h2>
+            <!-- Mobile + Email -->
+            <section class="txt-content"> 
+                <p><strong>Mobil:</strong> +420 725 475 558</p>
+                <p><strong>E-mail:</strong> info@dreamride.cz</p>
+                <p class="my-5">Jsme tady hlavně pro Vás nebojte se nás na cokoliv zeptat!</p>
+                <p></p>
+            <!-- Social sites -->
+                <h2 class="section-h2">Sociální sítě</h2>
+
+                <!-- vynechat trošku víc místa a najít Icony na FB a Instagram -->
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </section >
     </article>  
 
     <footer class="footer-grid bg-gradient-red-black-reverse">

@@ -8,8 +8,8 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
     {
 
         // Píšeme sem atributy Viewu, do kterých se má uložit nějaká hodnota proměnné z Viewu - odpovídá tedy políčkům formuláře
-        // přiřazené auto k Request
-        public int CarId { get; set; }
+        // přiřazené auto k Request (zatím neřešit moc)
+        public int? CarId { get; set; } = null;
 
         //  Request values:
         [Required(ErrorMessage = "Je nutné vybrat jednu z možností")]

@@ -26,12 +26,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-title {
     font-weight: 600;
-    font-size: 2.8rem;
+    font-size: 3.5rem;
+    font-style: bold;
     text-decoration: underline;
     text-underline-offset: 7px;
     color: inherit;
     padding-left: 5rem;
+    height: 7rem;
     display: flex;
+    text-align: left;
     align-items: center;        /* Vertikální zarovnání na střed */
 }
 
@@ -76,12 +79,38 @@ header nav li:hover {
     color: white;
 }
 
-    /*form classes*/
-/*margin 4: T R B L -- like clock*/
-/*margin 2: TB RL;*/
-.form-spacing {
-    margin: 0 0 10rem 4rem;
-    padding: 3rem 3rem;
+/*Article / section classes*/
+.article-spacing {   
+    padding: 4rem 6rem;
+}
+
+.article-member {
+    flex: 1;
+}
+
+.txt-content {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+}
+
+.section-h1 {
+    font-size: 3rem;
+    padding-bottom: 4rem;
+}
+
+.section-h2 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+/***form classes***/
+
+.form-title {
+    font-weight: 600;
+    text-align: center;
 }
 
 .label-names label {
@@ -92,12 +121,40 @@ header nav li:hover {
     color: #b50909
 }
 
-/*section-contact*/
-.section-btn {
+.text-white {
+    color: white;
+}
+
+/**Overide bootstrap form-button-shadow*/
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-select:focus {
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-check-input:focus {
+    border-color: #080808;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
+  }
+
+  .form-check-input:checked {
+    background-color: #b50909;
+    border-color: #ef7f7f;
+  }
+
+.section-btn { /*section-contact*/
     background-color: #b50909;
     color:white;
-    font-size: 1.3rem;
-    
+    font-size: 1.7rem;
 }
 
 .section-btn:hover {
@@ -105,32 +162,27 @@ header nav li:hover {
     color: white;
 }
 
-.form-title {
-    font-weight: 600;
-    text-align: center;
-}
-
-.custom-select-width {
-    width: calc(25.33% - 10px); /* Počítáme s tím, že chceme, aby zabíralo třetinu a mezi tím měl prostor */
-    margin-right: 10px; /* Prostor mezi výběrem předvolby a číslem */
-}
-
 .container-flex-row {
     display: flex;
     justify-content: space-around;
-    gap: 15rem;
+    gap: 10rem;
 }
 
-.article-member {
-    flex: 1;
+/*margin 4: T R B L -- like clock*/
+/*margin 2: TB RL;*/
+.form-spacing {
+    padding: 3rem 3rem;
 }
 
-.classic-text {   
-    padding: 2rem 0 8rem 0;
+.bg-content {
     background-image: url('../images/grey-light2jpg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color:#10070C;
+    display: flex;
 }
 
+/**/
 .bg-grey {
     background-color: grey;
 }
@@ -206,7 +258,7 @@ footer nav li:hover {
 
 /*general settings*/
 
-.alert-color {
+.alert-bg {
     background-color: purple;
 }
 
@@ -216,29 +268,6 @@ body {
     background-color: black;
     color: white;
     font-family: "Inter", sans-serif;
-}
-
-.p-title {
-    height: 6rem;
-    font-optical-sizing: auto;
-    font-style: bold;
-    font-weight: 600;
-    font-size: 2.8rem;
-    text-underline-offset: 7px;
-    text-decoration: underline;
-    color: inherit;
-    display: flex;
-    text-align: left;
-    align-items: center;        /* Vertikální zarovnání na střed */
-}
-
-.p-normal {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    margin-left: 6rem;
 }
 
 .a-left {
