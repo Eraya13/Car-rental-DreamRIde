@@ -62,10 +62,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**registration central*/
-
 .centre-form {
     justify-content: center;
 }
+
+.form-check-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .form-check-container .btn-general {
+        margin-left: auto; /* Zajišťuje, že tlačítko bude na konci kontejneru */
+    }
+
+    .form-check-container .form-check-input {
+        margin-right: 1rem; /* Nastavíme mezeru mezi zaškrtávacím políčkem a tlačítkem */
+    }
 
 .content-wrap {
     flex: 1; /* This makes sure the main content takes up the available space */
