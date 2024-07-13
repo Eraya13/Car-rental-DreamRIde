@@ -33,11 +33,7 @@ html, body {
 }
 
 a:hover {
-    color:currentColor;
-}
-
-h1 {
-    padding-top: 2rem;
+    color: currentColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,22 +47,45 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
 }
 
+.main-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*T R B L*/
+.content-general {
+    padding: 0 8rem 3rem 8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/**registration central*/
+
+.centre-form {
+    justify-content: center;
+}
+
 .content-wrap {
     flex: 1; /* This makes sure the main content takes up the available space */
 }
 
+/*margin 2: TB RL; 4: T R B L*/
+
 .p-title {
     font-weight: 600;
     font-size: 3.5rem;
-    font-style: bold;
-    text-decoration: underline;
-    text-underline-offset: 7px;
+    padding-top: 2rem;
     color: inherit;
-    padding-left: 5rem;
-    height: 7rem;
     display: flex;
-    text-align: left;
     align-items: center; /* Vertikální zarovnání na střed */
+}
+
+.title-header {
+    margin-bottom: 3rem;
+    margin-left: 8rem;
+    margin-right: 20rem;
 }
 
 /*header classes*/
@@ -118,7 +137,7 @@ header nav li:hover {
 
 /*Article / section classes*/
 .article-spacing {
-    padding: 4rem 6rem;
+    padding: 3rem 8rem;
 }
 
 .article-member {
@@ -134,7 +153,7 @@ header nav li:hover {
 }
 
 .section-h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-bottom: 4rem;
 }
 
@@ -150,7 +169,7 @@ header nav li:hover {
     text-align: center;
 }
 
-.label-names label {
+.label-names {
     font-size: 1.5rem;
 }
 
@@ -161,6 +180,8 @@ header nav li:hover {
 .text-white {
     color: white;
 }
+
+
 
 /**Overide bootstrap form-button-shadow*/
 .form-control:focus {
@@ -199,10 +220,20 @@ header nav li:hover {
         color: white;
     }
 
+.btn-general {
+    background-color: #b50909;
+    color: white;
+    font-size: 1.7rem;
+}
+    .btn-general:hover {
+        background-color: white;
+        color: #b50909;
+    }
+
 .container-flex-row {
     display: flex;
     justify-content: space-around;
-    gap: 10rem;
+    gap: 4rem;
 }
 
 /*margin 4: T R B L -- like clock*/
@@ -212,7 +243,7 @@ header nav li:hover {
 }
 
 .bg-content {
-    background-image: url('../images/grey-light2jpg.jpg');
+    background-image: url('../images/grey-light.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: #10070C;
@@ -282,6 +313,7 @@ footer h2 {         /*stil sans serif*/
     font-weight: 500;
     font-size: 1.5rem;
     padding-top: 1rem;
+    padding-left: 4rem;
 }
 
 footer {
@@ -320,29 +352,6 @@ body {
     color: white;
     font-family: "Inter", sans-serif;
 }
-
-.p-title {
-    height: 6rem;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: 2.8rem;
-    text-underline-offset: 7px;
-    text-decoration: underline;
-    color: inherit;
-    display: flex;
-    text-align: left;
-    align-items: center; /* Vertikální zarovnání na střed */
-}
-
-p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    margin-left: 6rem;
-}
-
 
 .a-left {
     text-align: left;

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Autopujcovna_DreamRide.Data;
 using Autopujcovna_DreamRide.Models;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace Autopujcovna_DreamRide.Controllers
 {
@@ -19,31 +20,10 @@ namespace Autopujcovna_DreamRide.Controllers
             _context = context;
         }
 
-        // GET: Requests
-        public async Task<IActionResult> Index()
+        public IActionResult CarReservation()
         {
-            return View(await _context.Requests.ToListAsync());
+            return View();
         }
-
-        // GET: Requests/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var request = await _context.Requests
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-
-            return View(request);
-        }
-
-
 
         //***** TO DO - REBUILD - nutnost initializer + Controller... *****
         // GET: Requests/Create
