@@ -4,6 +4,7 @@ namespace Autopujcovna_DreamRide.Models
 {
     public class Client
     {
+        [Key]
         public int Id { get; set; }
         
         [StringLength(100)]
@@ -25,5 +26,9 @@ namespace Autopujcovna_DreamRide.Models
         [RegularExpression(@"^\d+(\s?\d+)*$")]
         [StringLength(20)]
         public string PhoneNumber { get; set; } = "";
+
+
+        // Navigační vlastnost pro Requests
+        public ICollection<Request> ?Requests { get; set; }
     }
 }

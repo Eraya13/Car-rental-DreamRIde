@@ -5,6 +5,7 @@ namespace Autopujcovna_DreamRide.Models
 {
     public class Car
     {
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Značka auta musí být vyplněna")]
@@ -16,6 +17,7 @@ namespace Autopujcovna_DreamRide.Models
         [Required(ErrorMessage = "Rok výroby musí být vyplněn")]
         [Range(1900, 3000, ErrorMessage = "Rok výroby musí být větší než 1899")]
         public int YearOfManufacture { get; set; }
+        [StringLength(25)]
         [Required(ErrorMessage = "Volba typu auta je povinná")]
         public string TypeOfCar { get; set; } = "";     // e.g. Sedan, Coupé, Limusine, Crossover, Hatchback, Cabriolet,
 
@@ -30,7 +32,12 @@ namespace Autopujcovna_DreamRide.Models
         public int TopSpeedKmForHour { get; set; }
         [Range(1, 5000, ErrorMessage = "Výkon v kW musí být v rozsahu 1 - 5000 kW")]
         public int PowerInKw { get; set; }
+        [StringLength(25)]
         [Required(ErrorMessage = "Volba typu paliva je povinná")]
         public string Fuel { get; set; } = "";
+
+
+        // Navigační vlastnost pro Requests
+        public ICollection<Request> ?Requests { get; set; }
     }
 }
