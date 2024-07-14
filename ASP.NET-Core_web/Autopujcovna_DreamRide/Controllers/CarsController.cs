@@ -153,5 +153,18 @@ namespace Autopujcovna_DreamRide.Controllers
         {
             return _context.Cars.Any(e => e.Id == id);
         }
+
+
+
+
+        // moje
+
+        // GET: Cars/Create
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+
     }
 }

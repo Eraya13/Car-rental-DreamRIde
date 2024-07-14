@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Virtuální půjčovna sportovních aut - Dream Ride." />
+    <meta name="keywords" content="auta, webový projekt, Adéla Srbová, zážitkové jízdy" />
+    <meta name="author" content="Adéla Srbová" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewData["Title"] - DreamRide Autopůjčovna</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />       @*nezapomenout styly nakopirovat sem - toto přepíše bootstrap*@
+</head>
+<body class="bg-grey">
+    <div class="page-container">
+        <header class="bg-gradient-red-black header-font">
+            <div class="logo">
+                <a asp-controller="#" asp-action="">
+                    <img src="~/images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="navbar nav flex-grow-1">
+                    <li><a asp-controller="Cars" asp-action="Index">Nabídka aut</a></li>
+                    <li><a asp-controller="Requests" asp-action="Index">Správa žádostí</a></li>
+                    <li><a asp-controller="Account" asp-action="Logout">Odhlásit se</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <header class="title-header">
+                <h1 class="p-title">@ViewData["Title"]</h1>
+            </header>
+            <main class="bg-grey content-wrap">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+</body>
+</html>
