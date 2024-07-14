@@ -4,10 +4,9 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Zadejte emailovou adresu")]
-        [EmailAddress(ErrorMessage = "Neplatná emailová adresa")]
-        [Display(Name = "Email")]
-        public string Email { get; set; } = "";
+        [Required(ErrorMessage = "Zadejte uživatelské jméno")]
+        [Display(Name = "Username")]
+        public string Username { get; set; } = "";
 
         [Required(ErrorMessage = "Zadejte heslo")]
         [StringLength(100, ErrorMessage = "{0} musí mít délku alespoň {2} a nejvíc {1} znaků.", MinimumLength = 8)]

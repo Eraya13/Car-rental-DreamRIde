@@ -4,10 +4,9 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Zadejte emailovou adresu")]
-        [EmailAddress(ErrorMessage = "Neplatná emailová adresa")]
-        [Display(Name = "Email")]
-        public string Email { get; set; } = "";
+        [Required(ErrorMessage = "Zadejte uživatelské jméno")]
+        [Display(Name = "Uživatelské jméno")]
+        public string Username { get; set; } = "";
 
         [Required(ErrorMessage = "Zadejte heslo")]
         [DataType(DataType.Password)]

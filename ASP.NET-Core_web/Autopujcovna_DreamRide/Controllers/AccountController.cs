@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.DependencyInjection;  // Pro použití metody GetRequiredService
+using Autopujcovna_DreamRide.Models;
+
 
 
 namespace Autopujcovna_DreamRide.Controllers
@@ -9,14 +12,73 @@ namespace Autopujcovna_DreamRide.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly AllowedUsernames allowedUsernames; // Přidáme zde pole pro povolená uživatelská jména
+
 
         public AccountController
             (UserManager<IdentityUser> userManager,
-             SignInManager<IdentityUser> signInManager)
+             SignInManager<IdentityUser> signInManager,
+             AllowedUsernames allowedUsernames)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.allowedUsernames = allowedUsernames;
         }
+
+
+
+        // Prvotní registrace - form zobrazení (pokus)
+        public IActionResult Register(string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        // Registrace pokud vše ok, jinak se vrací registrační formulář s přijatým modelem
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(Models.ViewModels.RegisterViewModel model, string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+
+            if (ModelState.IsValid)
+            {
+                // Ověření, zda zadané uživatelské jméno patří mezi povolená
+                if (model.Username == allowedUsernames.AdminUsername || model.Username == allowedUsernames.ManagerUsername)
+                {
+                    var user = new IdentityUser { UserName = model.Username };
+                    var result = await userManager.CreateAsync(user, model.Password);
+
+                    if (result.Succeeded)
+                    {
+                        if (model.Username == allowedUsernames.AdminUsername)
+                        {
+                            await userManager.AddToRoleAsync(user, UserRoles.Admin);
+                        }
+                        else if (model.Username == allowedUsernames.ManagerUsername)
+                        {
+                            await userManager.AddToRoleAsync(user, UserRoles.RequestManager);
+                        }
+
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToLocal(returnUrl);
+                    }
+
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Zadané uživatelské jméno není povolené.");
+                }
+            }
+
+            return View(model);
+        }
+
+
 
         private IActionResult RedirectToLocal(string? returnUrl)        // přesměruje uživatele na URL adresu
         {
@@ -43,7 +105,7 @@ namespace Autopujcovna_DreamRide.Controllers
             if (ModelState.IsValid)
             {
                 Microsoft.AspNetCore.Identity.SignInResult result =     // uvedení SignInResult z určitého jm. prostoru
-                    await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);      // přihlásí uživatele
+                    await signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, false);      // přihlásí uživatele
                 // ověří se, zda je heslo a login (email) true
                 // hodnoty: login, heslo, zapamatování přihlášení, uzamknutí účtu po neuspěšném pokusu o přihlášení
 
@@ -60,40 +122,6 @@ namespace Autopujcovna_DreamRide.Controllers
             return View(model);
         }
 
-        // Prvotní registrace - form zobrazení (pokus)
-        public IActionResult Register(string? returnUrl = null)
-        {
-            ViewData["ReturnUrl"] = returnUrl;
-            return View();
-        }
-
-
-        // Registrace pokud vše ok, jinak se vrací registrační formulář s přijatým modelem
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(Models.ViewModels.RegisterViewModel model, string? returnUrl = null)
-        {
-            ViewData["ReturnUrl"] = returnUrl;
-
-            if (ModelState.IsValid)
-            {       // admin je user s admin právy
-                IdentityUser user = new IdentityUser { UserName = model.Email, Email = model.Email };   // Vytvoření uživatele -> IdentityUser
-                IdentityResult result = await userManager.CreateAsync(user, model.Password);
-
-                if (result.Succeeded)
-                {
-                    await signInManager.SignInAsync(user, isPersistent: false);     // isPersistent = určení, zda má být uživatel přihlašen po zavření prohlížeče
-                    return RedirectToLocal(returnUrl);
-                }
-
-                foreach (IdentityError error in result.Errors)
-                {
-                    ModelState.AddModelError(error.Code, error.Description);
-                }
-            }
-
-            return View(model);
-        }
 
         // odhlášení uživatele
         public async Task<IActionResult> Logout()
