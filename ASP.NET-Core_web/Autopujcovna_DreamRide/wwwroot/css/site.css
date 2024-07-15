@@ -147,7 +147,6 @@ header nav li:hover {
     color: white;
 }
 
-
 /*Article / section classes*/
 .article-spacing {
     padding: 3rem 8rem;
@@ -184,6 +183,22 @@ header nav li:hover {
 
 .label-names {
     font-size: 1.5rem;
+}
+
+
+.req-password {
+    margin-left: 9rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+
+.label-names-l {
+    font-size: 1.8rem;
+}
+
+.label-names-xl {
+    font-size: 2.2rem;
 }
 
 .text-red {
@@ -249,6 +264,12 @@ header nav li:hover {
     gap: 4rem;
 }
 
+.centered-left-content {
+    position: relative;
+    left: 50%; /* Posune levý okraj kontejneru do středu obrazovky */
+    transform: translateX(-50%); /* Posune celý obsah o polovinu šířky zpět doleva */
+}
+
 /*margin 4: T R B L -- like clock*/
 /*margin 2: TB RL;*/
 .form-spacing {
@@ -269,9 +290,12 @@ header nav li:hover {
 }
 
 .bg-black {
-    background-color: black;
+    background-color: #a50505;
 }
 
+.bg-red {
+    background-color: #a50505;
+}
 
 .bg-gradient-red-black {
     background-color: #10070C;
