@@ -18,7 +18,7 @@
 </head>
 <body class="bg-grey">
     <div class="page-container">
-        <header class="bg-gradient-red-black header-font">
+        <header class="bg-red header-font">
             <div class="logo">
                 <a asp-controller="#" asp-action="">
                     <img src="~/images/logo.png" alt="Logo">
@@ -41,5 +41,9 @@
             </main>
         </div>
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
