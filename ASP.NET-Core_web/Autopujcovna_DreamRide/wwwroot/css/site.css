@@ -8,6 +8,10 @@ html, body {
     padding: 0;
 }
 
+.relative-container {
+    position: relative;
+}
+
 /*My css*/
 /*upravene html element DOM*/
 /*default styl webu*/
@@ -331,18 +335,17 @@ header nav li:hover {
 
 /*padding for car-edit/add*/
 .car-btn-back-pos {
-    justify-content: center !important;
-    padding-left: 30rem;
+    justify-content: flex-end !important;
+    padding-left: 40rem;
 }
 
 .car-btn-submit-pos {
     justify-content: flex-end !important;
-    padding-right: 5rem;
 }
 
 .btn-pos-end {
     justify-content: flex-end !important;
-    margin-right: 5rem;
+    margin-right: 10rem;
 }
 
 
