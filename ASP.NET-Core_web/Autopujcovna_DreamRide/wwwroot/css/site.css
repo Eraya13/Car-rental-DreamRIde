@@ -1,11 +1,11 @@
 ﻿.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /*My css*/
@@ -40,18 +40,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
 
-/*zajišťuje aby se roztáhli všechny prvky a nezůstalo background body vidět*/
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.main-container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
 
 
 /*T R B L*/
@@ -88,17 +76,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-title {
     font-weight: 600;
-    font-size: 3.5rem;
-    padding-top: 2rem;
+    font-size: 2.5rem;
+    padding-top: 1.0rem;
+    padding-left: 4rem;
     color: inherit;
     display: flex;
     align-items: center; /* Vertikální zarovnání na střed */
 }
 
 .title-header {
-    margin-bottom: 3rem;
-    margin-left: 8rem;
-    margin-right: 20rem;
+    margin-bottom: 1rem;
 }
 
 /*header classes*/
@@ -147,6 +134,12 @@ header nav li:hover {
     color: white;
 }
 
+.header-font-black {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #10070C;
+}
+
 /*Article / section classes*/
 .article-spacing {
     padding: 3rem 8rem;
@@ -185,13 +178,11 @@ header nav li:hover {
     font-size: 1.5rem;
 }
 
-
 .req-password {
     margin-left: 9rem;
     font-size: 1.8rem;
     line-height: 2rem;
 }
-
 
 .label-names-l {
     font-size: 1.8rem;
@@ -208,8 +199,6 @@ header nav li:hover {
 .text-white {
     color: white;
 }
-
-
 
 /**Overide bootstrap form-button-shadow*/
 .form-control:focus {
@@ -237,14 +226,17 @@ header nav li:hover {
     border-color: #ef7f7f;
 }
 
-.section-btn { /*section-contact*/
+
+/*Button*/
+.section-btn {
     background-color: #b50909;
     color: white;
     font-size: 1.7rem;
+    border-radius: 0.75rem;
 }
 
     .section-btn:hover {
-        background-color: black;
+        background-color: #890505;
         color: white;
     }
 
@@ -253,6 +245,7 @@ header nav li:hover {
     color: white;
     font-size: 1.7rem;
 }
+
     .btn-general:hover {
         background-color: white;
         color: #b50909;
@@ -276,6 +269,71 @@ header nav li:hover {
     padding: 3rem 3rem;
 }
 
+
+/*zajišťuje aby se roztáhli všechny prvky a nezůstalo background body vidět*/
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/****Sections*****/
+/*Karta, která zve k prohlídce aut*/
+.invitation-card {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Nastav pevnou výšku sekce */
+    overflow: hidden; /* Skryje části obrázku, které přesahují sekci */
+}
+
+    .invitation-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Obrázek pokryje celou šířku sekce a zachová poměr stran */
+        object-position: 50% 40%; /* Posune obrázek lehce nahoru, aby byl lehce oříznutý shora i zdola */
+    }
+
+.btn-pos {
+    position: absolute;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-down {
+    bottom: 40px;
+    right: 50px;
+}
+
+.h2-card {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1.2px black;
+    font-weight: 600;
+}
+
+.text-on-card {
+    position: absolute;
+    top: 25%;
+    left: 6rem;
+    transform: translateY(-50%);
+    color: rgb(219, 218, 218);
+    z-index: 1;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+.p-card-effects {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 0.3px black;
+}
+
 .bg-content {
     background-image: url('../images/grey-light.jpg');
     background-repeat: no-repeat;
@@ -297,6 +355,10 @@ header nav li:hover {
     background-color: #a50505;
 }
 
+.bg-white {
+    background-color: white;
+}
+
 .bg-gradient-red-black {
     background-color: #10070C;
     background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
@@ -311,14 +373,6 @@ header nav li:hover {
     background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
 }
 
-/*article p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    margin-left: 6rem;
-}*/
-
 /*-----footer settings-----*/
 footer {
     width: 100%;
@@ -326,10 +380,10 @@ footer {
 }
 
 .footer-nav {
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
-footer h2 {         /*stil sans serif*/
+footer h2 { /*stil sans serif*/
     font-weight: 400;
     font-size: 2rem;
 }
@@ -355,7 +409,8 @@ footer h2 {         /*stil sans serif*/
 
 footer {
     width: 100%;
-    margin-top: auto; /* footer je tlačen dolů*/
+    padding-top: 2rem;
+    margin-top: auto; /*musí být footer tlačen dolů*/
 }
 
 .footer-links {
@@ -375,9 +430,7 @@ footer nav li:hover {
     grid-column: span 3; /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
 }
 
-
 /*general settings*/
-
 .alert-color {
     background-color: purple;
 }

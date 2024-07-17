@@ -88,12 +88,22 @@ namespace Autopujcovna_DreamRide.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
+        // Přesměruje uživatele podle role na příslušnou domovskou stránku (Admin -> Cars -> Index; Manager -> Request -> Index)
+        // Prvotní verze vždy přesměruje na Cars -> Index
+        private IActionResult RedirectHome()
+        {
+            return RedirectToAction(nameof(CarsController.Index), "Cars");
+        }
+
         // prvotní zobrazení LoginViewu
         public IActionResult Login(string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;  // zapamatování URL, kam uživatele vrátit po úspěšném přihlášení
             return View();
         }
+
+
+
 
         // odeslání formuláře Loginu --- zpracování pokusu o přihlášení
         [HttpPost]
@@ -111,6 +121,7 @@ namespace Autopujcovna_DreamRide.Controllers
 
                 // dokud se neprovede úspěšný login - vracíme uživateli formulář...
                 //SignInResult -- signalizuje úspěšnost přihlášení... -> přesměrování uživatele (RedirectToLocal())
+                
                 if (result.Succeeded)
                     return RedirectToLocal(returnUrl);
 

@@ -7,7 +7,6 @@ namespace Autopujcovna_DreamRide.Models
     {
         [Key]
         public int Id { get; set; }
-
         [Required(ErrorMessage = "Značka auta musí být vyplněna")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "Značka auta musí být zapsána pomocí zkratek např. BMW")]   // značka mezi 50 a 2 znaky
         public string Label { get; set; } = "";
