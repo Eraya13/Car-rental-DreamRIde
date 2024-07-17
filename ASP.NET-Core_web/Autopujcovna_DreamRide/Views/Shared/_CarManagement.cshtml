@@ -26,6 +26,8 @@
             </div>
             <nav>
                 <ul class="navbar nav flex-grow-1">
+                    <li><a asp-controller="Home" asp-action="Index">Domů</a></li>
+                    <li><a asp-controller="Cars" asp-action="Create">Přidat auto</a></li>
                     <li><a asp-controller="Cars" asp-action="Index">Nabídka aut</a></li>
                     <li><a asp-controller="Requests" asp-action="Index">Správa žádostí</a></li>
                     <li><a asp-controller="Account" asp-action="Logout">Odhlásit se</a></li>
@@ -36,7 +38,7 @@
             <header class="title-header">
                 <h1 class="p-title">@ViewData["Title"]</h1>
             </header>
-            <main class=" content-wrap">
+            <main class="content-wrap">
                 @RenderBody()
             </main>
         </div>

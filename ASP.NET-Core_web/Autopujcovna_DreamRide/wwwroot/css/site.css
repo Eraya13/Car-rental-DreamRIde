@@ -157,6 +157,10 @@ header nav li:hover {
     line-height: 2.5rem;
 }
 
+.txt-m {
+    font-size: 1.3rem;
+}
+
 .section-h1 {
     font-size: 2.5rem;
     padding-bottom: 4rem;
@@ -227,7 +231,7 @@ header nav li:hover {
 }
 
 
-/*Button*/
+/*Buttons*/
 .section-btn {
     background-color: #b50909;
     color: white;
@@ -239,6 +243,20 @@ header nav li:hover {
         background-color: #890505;
         color: white;
     }
+
+.back-btn {
+    background-color: #575555;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 0.75rem;
+}
+    .back-btn:hover {
+        background-color: #3b3a3a;
+        color: white;
+    }
+
+
+
 
 .btn-general {
     background-color: #b50909;
@@ -310,6 +328,23 @@ header nav li:hover {
     bottom: 40px;
     right: 50px;
 }
+
+/*padding for car-edit/add*/
+.car-btn-back-pos {
+    justify-content: center !important;
+    padding-left: 30rem;
+}
+
+.car-btn-submit-pos {
+    justify-content: flex-end !important;
+    padding-right: 5rem;
+}
+
+.btn-pos-end {
+    justify-content: flex-end !important;
+    margin-right: 5rem;
+}
+
 
 .h2-card {
     font-size: 2.5rem;

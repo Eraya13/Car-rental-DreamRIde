@@ -27,11 +27,12 @@
             <nav>
                 <ul class="navbar nav flex-grow-1">
                     @* použití viewu jiného controlleru -> navBar přesměruje na jeden view a ten dále bude komunikovat s dalšími (budou na sebe třeba navazovat odkazy)*@
-                    <li><a asp-controller="Cars" asp-action="Index">Nabídka aut</a></li>
-                   @*  <li><a asp-controller="Cars" asp-action="Edit">Editovat</a></li> *@
-                    <li><a asp-controller="Requests" asp-action="CarReservation">Rezervace Auta</a></li>
-                    <li><a asp-controller="Account" asp-action="Register">Registrace</a></li>
-                    <li><a asp-controller="Account" asp-action="Login">Přihlášení</a></li>
+                    <li><a asp-controller="Cars" asp-action="Index">Přehled všech aut</a></li>
+                    <li><a asp-controller="Requests" asp-action="CarReservation">Rezervace auta</a></li>
+                    <li><a asp-controller="Cars" asp-action="Edit">Editovat</a></li>
+                    <li><a asp-controller="Cars" asp-action="Create">Přidat auto</a></li>
+@*                     <li><a asp-controller="Account" asp-action="Register">Registrace</a></li>
+                    <li><a asp-controller="Account" asp-action="Login">Přihlášení</a></li> *@
                     <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
                     <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
                     @* <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li> *@

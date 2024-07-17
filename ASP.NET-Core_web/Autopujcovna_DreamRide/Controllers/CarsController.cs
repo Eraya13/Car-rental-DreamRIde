@@ -54,7 +54,7 @@ namespace Autopujcovna_DreamRide.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,EngineType,EngineDisplacement,Transmission,TopSpeedKmForHour,PowerInKw,Fuel")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -153,18 +153,5 @@ namespace Autopujcovna_DreamRide.Controllers
         {
             return _context.Cars.Any(e => e.Id == id);
         }
-
-
-
-
-        // moje
-
-        // GET: Cars/Create
-        public IActionResult Add()
-        {
-            return View();
-        }
-
-
     }
 }

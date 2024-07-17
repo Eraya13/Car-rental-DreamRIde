@@ -1,75 +1,120 @@
 ﻿@model Autopujcovna_DreamRide.Models.Car
 
 @{
-    ViewData["Title"] = "Nové auto";
+    ViewData["Title"] = "Přidání auta";
     Layout = LayoutPaths.CarManagement;
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Label" class="control-label"></label>
-                <input asp-for="Label" class="form-control" />
-                <span asp-validation-for="Label" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Model" class="control-label"></label>
-                <input asp-for="Model" class="form-control" />
-                <span asp-validation-for="Model" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="YearOfManufacture" class="control-label"></label>
-                <input asp-for="YearOfManufacture" class="form-control" />
-                <span asp-validation-for="YearOfManufacture" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TypeOfCar" class="control-label"></label>
-                <input asp-for="TypeOfCar" class="form-control" />
-                <span asp-validation-for="TypeOfCar" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EngineType" class="control-label"></label>
-                <input asp-for="EngineType" class="form-control" />
-                <span asp-validation-for="EngineType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EngineDisplacement" class="control-label"></label>
-                <input asp-for="EngineDisplacement" class="form-control" />
-                <span asp-validation-for="EngineDisplacement" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Transmission" class="control-label"></label>
-                <input asp-for="Transmission" class="form-control" />
-                <span asp-validation-for="Transmission" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TopSpeedKmForHour" class="control-label"></label>
-                <input asp-for="TopSpeedKmForHour" class="form-control" />
-                <span asp-validation-for="TopSpeedKmForHour" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PowerInKw" class="control-label"></label>
-                <input asp-for="PowerInKw" class="form-control" />
-                <span asp-validation-for="PowerInKw" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Fuel" class="control-label"></label>
-                <input asp-for="Fuel" class="form-control" />
-                <span asp-validation-for="Fuel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Vytvořit auto</button>
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<section class="container mb-3">
+    <form asp-action="Create">
+        <div class="d-flex my-3 mt-5">
+            <h2 class="mb-0">Základní informace o automobilu</h2>
+            <div class="d-flex car-btn-back-pos">
+                <a asp-action="Index" class="btn back-btn">Zpět do přehledu</a>
+            </div>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row py-3 txt-m">
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="Label" class="control-label"></label>
+                    <input asp-for="Label" class="form-control" />
+                    <span asp-validation-for="Label" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="Model" class="control-label"></label>
+                    <input asp-for="Model" class="form-control" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="YearOfManufacture" class="control-label"></label>
+                    <input asp-for="YearOfManufacture" class="form-control" />
+                    <span asp-validation-for="YearOfManufacture" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row py-3 txt-m">
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="TypeOfCar" class="control-label"></label>
+                    <input asp-for="TypeOfCar" class="form-control" />
+                    <span asp-validation-for="TypeOfCar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="Fuel" class="control-label"></label>
+                    <input asp-for="Fuel" class="form-control" />
+                    <span asp-validation-for="Fuel" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="TopSpeedKmForHour" class="control-label"></label>
+                    <input asp-for="TopSpeedKmForHour" class="form-control" />
+                    <span asp-validation-for="TopSpeedKmForHour" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="my-3 mt-5">Specifikace motoru</h2>
+        <div class="row py-3 txt-m">
+            <div class="col-3 px-4">
+                <div class="form-group ">
+                    <label asp-for="EngineType" class="control-label"></label>
+                    <input asp-for="EngineType" class="form-control" />
+                    <span asp-validation-for="EngineType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="EngineDisplacement" class="control-label"></label>
+                    <input asp-for="EngineDisplacement" class="form-control" />
+                    <span asp-validation-for="EngineDisplacement" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="PowerInKw" class="control-label"></label>
+                    <input asp-for="PowerInKw" class="form-control" />
+                    <span asp-validation-for="PowerInKw" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="my-3 mt-5">Další technické údaje</h2>
+        <div class="row txt-m">
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="Transmission" class="control-label"></label>
+                    <input asp-for="Transmission" class="form-control" />
+                    <span asp-validation-for="Transmission" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="DriveTrain" class="control-label"></label>
+                    <input asp-for="DriveTrain" class="form-control" />
+                    <span asp-validation-for="DriveTrain" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group d-flex car-btn-submit-pos">
+            <button type="submit" class="btn section-btn">Přidat auto</button>
+        </div>
+    </form>
+</section>
+
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
