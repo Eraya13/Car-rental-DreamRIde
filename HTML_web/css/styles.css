@@ -1,279 +1,451 @@
-/*upravene html element DOM*/
-    /*default styl webu*/
-
-/*"Logo settings*/
-
-.logo img {                 /*toto říká, že img pod classou .logo*/
-    padding-left: 10rem;
-    height: 6rem; 
-    max-width: 100%;        /* Zabraňuje přetékání šířky */
-}
-
-.bigger-logo img {
-    height: 10rem; 
-    max-width: 100%; 
-}
-
-.bigger-logo:hover,
-.logo:hover {
-    transform: scale(1.05);
-    filter: contrast(120%);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
-}
-
-.p-title {
-    font-weight: 600;
-    font-size: 3.5rem;
-    font-style: bold;
-    text-decoration: underline;
-    text-underline-offset: 7px;
-    color: inherit;
-    padding-left: 5rem;
-    height: 7rem;
-    display: flex;
-    text-align: left;
-    align-items: center;        /* Vertikální zarovnání na střed */
-}
-
-/*header classes*/
-header {
-    height: 6rem;
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid white;
-}
-
-header nav ul {         /*pro header je jiná nez u footer*/
-    display: flex;
-    gap: 3rem;
-}
-
-nav ul {
-    list-style-type: none;
-    padding-right: 3rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
-
-footer nav li {
-    padding-bottom: 1rem;
-}
-
-header nav li:hover {
-    border-bottom: white solid;
-}
-
-.header-font {
-    font-weight: 600;
-    font-size: 1.8rem;
-    color: white;
-}
-
-/*Article / section classes*/
-.article-spacing {   
-    padding: 4rem 6rem;
-}
-
-.article-member {
-    flex: 1;
-}
-
-.txt-content {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.0rem;
-    line-height: 2.5rem;
-}
-
-.section-h1 {
-    font-size: 3rem;
-    padding-bottom: 4rem;
-}
-
-.section-h2 {
-    font-size: 2.5rem;
-    padding-bottom: 1rem;
-}
-
-/***form classes***/
-
-.form-title {
-    font-weight: 600;
-    text-align: center;
-}
-
-.label-names label {
-    font-size: 1.5rem;
-}
-
-.text-red {
-    color: #b50909
-}
-
-.text-white {
-    color: white;
-}
-
-/**Overide bootstrap form-button-shadow*/
-.form-control:focus {
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
-    border-color: #050404;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
-}
-
-.form-select:focus {
-    border-color: #050404;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
-}
-
-.form-check-input:focus {
-    border-color: #080808;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
   }
-
-  .form-check-input:checked {
-    background-color: #b50909;
-    border-color: #ef7f7f;
-  }
-
-.section-btn { /*section-contact*/
-    background-color: #b50909;
-    color:white;
-    font-size: 1.7rem;
-}
-
-.section-btn:hover {
-    background-color: black;
-    color: white;
-}
-
-.container-flex-row {
-    display: flex;
-    justify-content: space-around;
-    gap: 10rem;
-}
-
-/*margin 4: T R B L -- like clock*/
-/*margin 2: TB RL;*/
-.form-spacing {
-    padding: 3rem 3rem;
-}
-
-.bg-content {
-    background-image: url('../images/grey-light2jpg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color:#10070C;
-    display: flex;
-}
-
-/**/
-.bg-grey {
-    background-color: grey;
-}
-
-.bg-black {
-    background-color: black;
-}
-
-.bg-gradient-red-black {
-    background-color: #10070C;
-    background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
-    background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
-    background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
-}
-
-.bg-gradient-red-black-reverse {
-    background-color: #a50505;
-    background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
-    background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
-    background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
-}
-
-/*-----footer settings-----*/
-footer {
-    width: 100%;
-}
-
-.footer-nav {
-    padding: 0.5rem;
-}
-
-footer h2 {
-    font-weight: 400;
-    font-size: 2rem;
-}
-
-.footer-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.label-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.moto-font{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-}
-
-.footer-links {
-    font-size: 1.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif
-}
-
-footer nav li:hover {
-    text-decoration: underline;
-    text-underline-offset: 15px;
-}
-
-.createdBy {
-    text-align: center;
-    padding-bottom: 0.2rem;
-    background-color: #444;
-    grid-column: span 3;            /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
-}
-
-
-/*general settings*/
-
-.alert-bg {
-    background-color: purple;
-}
-
-body {
+  
+  html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: white;
-    font-family: "Inter", sans-serif;
+  }
+  
+  /*My css*/
+  /*upravene html element DOM*/
+  /*default styl webu*/
+  
+  /*"Logo settings*/
+  
+  .logo img { /*toto říká, že img pod classou .logo*/
+      padding-left: 10rem;
+      height: 6rem;
+      max-width: 100%; /* Zabraňuje přetékání šířky */
+  }
+  
+  .bigger-logo img {
+      height: 10rem;
+      max-width: 100%;
+  }
+  
+  /*hover thing*/
+  .bigger-logo:hover,
+  .logo:hover {
+      transform: scale(1.05);
+      filter: contrast(120%);
+  }
+  
+  a:hover {
+      color: currentColor;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      font-family: sans-serif;
+  }
+  
+  
+  
+  /*T R B L*/
+  .content-general {
+      padding: 0 8rem 3rem 8rem;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  /**registration central*/
+  .centre-form {
+      justify-content: center;
+  }
+  
+  .form-check-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+      .form-check-container .btn-general {
+          margin-left: auto; /* Zajišťuje, že tlačítko bude na konci kontejneru */
+      }
+  
+      .form-check-container .form-check-input {
+          margin-right: 1rem; /* Nastavíme mezeru mezi zaškrtávacím políčkem a tlačítkem */
+      }
+  
+  .content-wrap {
+      flex: 1; /* This makes sure the main content takes up the available space */
+  }
+  
+  /*margin 2: TB RL; 4: T R B L*/
+  
+  .p-title {
+      font-weight: 600;
+      font-size: 2.5rem;
+      padding-top: 1.0rem;
+      padding-left: 4rem;
+      color: inherit;
+      display: flex;
+      align-items: center; /* Vertikální zarovnání na střed */
+  }
+  
+  .title-header {
+      margin-bottom: 1rem;
+  }
+  
+  /*header classes*/
+  header {
+      height: 6rem;
+      width: 100%;
+      padding: 0 2rem;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid white;
+  }
+  
+      header nav ul { /*pro header je jiná nez u footer*/
+          display: flex;
+          gap: 3rem;
+      }
+  
+  nav ul {
+      list-style-type: none;
+      padding-right: 3rem;
+  }
+  
+  nav a {
+      text-decoration: none;
+      color: inherit;
+  }
+  
+  footer nav li {
+      padding-bottom: 1rem;
+  }
+  
+  .gap {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+  }
+  
+  header nav li:hover {
+      border-bottom: white solid;
+  }
+  
+  .header-font {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: white;
+  }
+  
+  .header-font-black {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #10070C;
+  }
+  
+  /*Article / section classes*/
+  .article-spacing {
+      padding: 3rem 8rem;
+  }
+  
+  .article-member {
+      flex: 1;
+  }
+  
+  .txt-content {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 2.0rem;
+      line-height: 2.5rem;
+  }
+  
+  .section-h1 {
+      font-size: 2.5rem;
+      padding-bottom: 4rem;
+  }
+  
+  .section-h2 {
+      font-size: 2.5rem;
+      padding-bottom: 1rem;
+  }
+  
+  /***form classes***/
+  
+  .form-title {
+      font-weight: 600;
+      text-align: center;
+  }
+  
+  .label-names {
+      font-size: 1.5rem;
+  }
+  
+  .req-password {
+      margin-left: 9rem;
+      font-size: 1.8rem;
+      line-height: 2rem;
+  }
+   
+  .label-names-l {
+      font-size: 1.8rem;
+  }
+  
+  .label-names-xl {
+      font-size: 2.2rem;
+  }
+  
+  .text-red {
+      color: #b50909
+  }
+  
+  .text-white {
+      color: white;
+  }
+  
+  /**Overide bootstrap form-button-shadow*/
+  .form-control:focus {
+      color: var(--bs-body-color);
+      background-color: var(--bs-body-bg);
+      border-color: #050404;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+  }
+  
+  .form-select:focus {
+      border-color: #050404;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+  }
+  
+  .form-check-input:focus {
+      border-color: #080808;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
+  }
+  
+  .form-check-input:checked {
+      background-color: #b50909;
+      border-color: #ef7f7f;
+  }
+  
+
+  /*Button*/
+  .section-btn { 
+      background-color: #b50909;
+      color: white;
+      font-size: 1.7rem;
+      border-radius: 0.75rem;
+  }
+  
+      .section-btn:hover {
+      background-color: #890505;
+      color: white;
+      }
+  
+  .btn-general {
+      background-color: #b50909;
+      color: white;
+      font-size: 1.7rem;
+  }
+      .btn-general:hover {
+          background-color: white;
+          color: #b50909;
+      }
+  
+  .container-flex-row {
+      display: flex;
+      justify-content: space-around;
+      gap: 4rem;
+  }
+  
+  .centered-left-content {
+      position: relative;
+      left: 50%; /* Posune levý okraj kontejneru do středu obrazovky */
+      transform: translateX(-50%); /* Posune celý obsah o polovinu šířky zpět doleva */
+  }
+  
+  /*margin 4: T R B L -- like clock*/
+  /*margin 2: TB RL;*/
+  .form-spacing {
+      padding: 3rem 3rem;
+  }
+
+
+  /*zajišťuje aby se roztáhli všechny prvky a nezůstalo background body vidět*/
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.a-left {
-    text-align: left;
+.main-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+ 
+        /****Sections*****/ 
+      /*Karta, která zve k prohlídce aut*/
+.invite-card {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Nastav pevnou výšku sekce */
+    overflow: hidden; /* Skryje části obrázku, které přesahují sekci */
+  }
+
+  .invite-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Obrázek pokryje celou šířku sekce a zachová poměr stran */
+    object-position: 50% 40%; /* Posune obrázek lehce nahoru, aby byl lehce oříznutý shora i zdola */
+  }
+ 
+.btn-pos {
+    position: absolute;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-.sm {
-    font-size: 1rem;
+.btn-down {
+    bottom: 40px;
+    right: 50px;
 }
+
+.h2-card {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1.2px black;
+    font-weight: 600;
+}
+
+.text-on-card {
+    position: absolute;
+    top: 25%;
+    left: 6rem;
+    transform: translateY(-50%);
+    color: rgb(219, 218, 218);   
+    z-index: 1;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+.p-card-effects {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); 
+    -webkit-text-stroke: 0.3px black;
+}
+
+  .bg-content {
+      background-image: url('../images/grey-light.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #10070C;
+      display: flex;
+  }
+  
+  /**/
+  .bg-grey {
+      background-color: grey;
+  }
+  
+  .bg-black {
+      background-color: #a50505;
+  }
+  
+  .bg-red {
+      background-color: #a50505;
+  }
+  
+  .bg-white {
+      background-color: white;
+  }
+  
+  .bg-gradient-red-black {
+      background-color: #10070C;
+      background: linear-gradient(96deg, #10070C 0%, #a50505 40%);
+      background: -webkit-linear-gradient(116deg, #10070C 8%, #a50505 80%);
+      background: -moz-linear-gradient(96deg, #10070C 0%, #a50505 10%);
+  }
+  
+  .bg-gradient-red-black-reverse {
+      background-color: #a50505;
+      background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
+      background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
+      background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
+  }
+
+  /*-----footer settings-----*/
+  footer {
+      width: 100%;
+      border-top: 2px solid white;
+  }
+  
+  .footer-nav {
+      padding: 1rem;
+  }
+  
+  footer h2 {         /*stil sans serif*/
+      font-weight: 400;
+      font-size: 2rem;
+  }
+  
+  .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .label-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .moto-font {
+      font-family: Helvetica;
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding-top: 1rem;
+      padding-left: 4rem;
+  }
+  
+  footer {
+      width: 100%;
+      padding-top: 2rem;
+      margin-top: auto; /*musí být footer tlačen dolů*/
+  }
+  
+  .footer-links {
+      font-size: 1.5rem;
+      font-family: 'Inter', sans-serif;
+  }
+  
+  footer nav li:hover {
+      text-decoration: underline;
+      text-underline-offset: 15px;
+  }
+  
+  .createdBy {
+      text-align: center;
+      padding: 1rem;
+      background-color: #444;
+      grid-column: span 3; /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
+  }
+  
+  /*general settings*/
+  .alert-color {
+      background-color: purple;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: "Inter", sans-serif;
+  }
+  
+  .a-left {
+      text-align: left;
+  }
+  
+  .sm {
+      font-size: 1rem;
+  }
