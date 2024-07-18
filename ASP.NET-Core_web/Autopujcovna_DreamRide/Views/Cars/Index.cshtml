@@ -5,7 +5,7 @@
 }
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Přidat auto</a>
 </p>
 <table class="table">
     <thead>
@@ -65,9 +65,9 @@
                     @pohonText
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@Model[i].Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@Model[i].Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@Model[i].Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a> |
+                    <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
+                    <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>
                 </td>
         </tr>
 }
