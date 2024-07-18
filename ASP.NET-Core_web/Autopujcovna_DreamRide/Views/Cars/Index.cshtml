@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Autopujcovna_DreamRide.Models.Car>
-
+﻿@model List<Autopujcovna_DreamRide.Models.ViewModels.BriefCarViewModel>
 @{
     ViewData["Title"] = "Nabídka aut";
     Layout = LayoutPaths.CarManagement;
@@ -12,76 +11,64 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Label)
+                @Html.DisplayNameFor(model => model[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                @Html.DisplayNameFor(model => model[0].Engine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.YearOfManufacture)
+                @Html.DisplayNameFor(model => model[0].Transmission)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TypeOfCar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EngineType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EngineDisplacement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Transmission)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TopSpeedKmForHour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PowerInKw)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fuel)
+                @Html.DisplayNameFor(model => model[0].DriveTrain)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Label)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YearOfManufacture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfCar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EngineType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EngineDisplacement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transmission)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TopSpeedKmForHour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PowerInKw)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fuel)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+        @* temer mam hotovo ještě musím akorát zařídit, aby se mi zobrazovala hodnota ve switchi*@
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Engine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model[i].Transmission)
+                </td>
+                <td>
+                    @{
+                        string pohonText;
+                        switch (Model[i].DriveTrain)
+                        {
+                            case "FWD":
+                                pohonText = "Přední náhon (FWD)";
+                                break;
+                            case "RWD":
+                                pohonText = "Zadní náhon (RWD)";
+                                break;
+                            case "AWD":
+                                pohonText = "Pohon na všechna kola (AWD)";
+                                break;
+                            case "4x4":
+                            case "4X4":
+                                pohonText = "Pohon na všechna kola (4x4)";
+                                break;
+                            default:
+                                pohonText = "Neznámý";
+                                break;
+                        }
+                    }
+                    @pohonText
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model[i].Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@Model[i].Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@Model[i].Id">Delete</a>
+                </td>
         </tr>
 }
     </tbody>

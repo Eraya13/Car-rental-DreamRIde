@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-
 namespace Autopujcovna_DreamRide.Models
 {
     public class Car

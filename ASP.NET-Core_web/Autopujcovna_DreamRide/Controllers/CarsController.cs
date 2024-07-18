@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Autopujcovna_DreamRide.Data;
 using Autopujcovna_DreamRide.Models;
+using Autopujcovna_DreamRide.Models.ViewModels;
 
 namespace Autopujcovna_DreamRide.Controllers
 {
@@ -20,7 +21,24 @@ namespace Autopujcovna_DreamRide.Controllers
         // GET: Cars
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cars.ToListAsync());
+            var cars = await _context.Cars.ToListAsync(); // získání všech záznamů (aut) z tabulky Cars
+            var briefCarViewModels = new List<BriefCarViewModel>();
+
+            foreach (var car in cars)
+            {
+                var briefCarViewModel = new BriefCarViewModel(
+                        car.Id,
+                        car.Label,
+                        car.Model,
+                        car.EngineType,
+                        car.EngineDisplacement,
+                        car.Transmission,
+                        car.DriveTrain
+                    );
+
+                briefCarViewModels.Add(briefCarViewModel);
+            }
+            return View(briefCarViewModels);
         }
 
         // GET: Cars/Details/5
@@ -54,9 +72,9 @@ namespace Autopujcovna_DreamRide.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(car);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.Add(car);          // vytvoří záznam pro databázi
+                await _context.SaveChangesAsync();  // uloží nový záznam do databáze
+                return RedirectToAction(nameof(Index));     // přesměruje uživatele na domovskou stránku
             }
             return View(car);
         }
@@ -80,7 +98,7 @@ namespace Autopujcovna_DreamRide.Controllers
         // POST: Cars/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,EngineType,EngineDisplacement,Transmission,TopSpeedKmForHour,PowerInKw,Fuel")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
         {
             if (id != car.Id)
             {
