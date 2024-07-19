@@ -5,48 +5,52 @@
 }
 
 <section class="container">
-    <img class="img-car" src="images/Subaru_BRZ -edit.jpg" alt="subaru">
+    @{
+        ViewData["Title"] = Model.FullName;
+    }
+
+    <img class="img-car" src="~/images/Subaru_BRZ -edit.jpg" alt="subaru">
     <!-- car parameters -->
     <section class="grid-container">
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Max rychlost</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.TopSpeed)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.TopSpeed) km/h</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Výkon</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.Power)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.Power) kW</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Převodovka</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.Transmission)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.Transmission)</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="~/images/" alt="transsmission">
-            <h1>Rok výroby</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.YearOfManufacture)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.YearOfManufacture)</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Motor</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.Engine)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.Engine)</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
             <h1>Pohon</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.DriveTrain)</p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Karosérie</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.Body)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.Body) </p>
         </div>
         <div class="grid-tile">
-            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
-            <h1>Palivo</h1>
-            <p class="grid-tile-value">240 km/h</p>
+            <img class="img-icon" src="~/images/icons/Car-icons/gearshift.png" alt="transsmission">
+            <h1>@Html.DisplayNameFor(model => model.Fuel)</h1>
+            <p class="grid-tile-value">@Html.DisplayFor(model => model.Fuel)</p>
         </div>
     </section>
     <p class="invite-txt">
@@ -57,13 +61,9 @@
 
 <div class="btn-container">
     <div class="start-pos btn-back-pos">
-        <a class="btn back-btn" alt="return to menu">Návrat do nabídky</a>
+        <a asp-action="Index" class="btn back-btn">Návrat do nabídky</a>
     </div>
     <div class="end-pos btn-details-pos">
         <a class="btn section-btn details-btn">Půjčit si auto</a>
     </div>
-</div>
-
-    <a asp-action="Edit" asp-route-id="@Model.CarId">Edit</a>
-    <a asp-action="Index">Back to List</a>
 </div>

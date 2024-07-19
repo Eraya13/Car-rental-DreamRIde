@@ -373,7 +373,9 @@ header nav li:hover {
 /**Details-car***/
 .img-car {
     width: 100%;
+    min-width: 800px;
     height: 60vh;
+    min-height: 500px;
     object-fit: cover;
     object-position: center; /* Vycentruje obrázek v kontejneru */
     border: 2px solid white;
@@ -431,7 +433,7 @@ header nav li:hover {
 
 .back-btn {
     font-size: 2.0rem;
-    padding: 1.2rem;
+    padding: 1rem;
 }
 
 .details-btn {
