@@ -30,12 +30,17 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
                     b.Property<string>("DriveTrain")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<float?>("EngineDisplacement")
+                    b.Property<float>("EngineDisplacement")
                         .HasColumnType("real");
 
                     b.Property<string>("EngineType")
@@ -68,17 +73,12 @@ namespace Autopujcovna_DreamRide.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TypeOfCar")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
                     b.Property<int>("YearOfManufacture")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cars", (string)null);
+                    b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("Autopujcovna_DreamRide.Models.Client", b =>
@@ -113,7 +113,7 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Autopujcovna_DreamRide.Models.Request", b =>
@@ -157,7 +157,7 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Requests", (string)null);
+                    b.ToTable("Requests");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

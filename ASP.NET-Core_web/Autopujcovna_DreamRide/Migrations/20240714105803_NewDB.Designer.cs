@@ -66,7 +66,7 @@ namespace Autopujcovna_DreamRide.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TypeOfCar")
+                    b.Property<string>("Body")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");

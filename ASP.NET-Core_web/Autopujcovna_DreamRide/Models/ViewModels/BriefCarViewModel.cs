@@ -17,11 +17,11 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         [Display(Name = "Pohon: ")]
         public string DriveTrain { get; set; } = "";
 
-        public BriefCarViewModel(int id, string label, string model, string engineType, float? engineDisplacement, string transmission, string driveTrain)
+        public BriefCarViewModel(int id, string label, string model, string engineType, float engineDisplacement, string transmission, string driveTrain)
         {
             Id = id;
             Title = label + " " + model;
-            Engine = $"{engineType} ({engineDisplacement?.ToString("0.0")})";
+            Engine = engineType + engineDisplacement.ToString("0.0");
             Transmission = transmission;
             DriveTrain = driveTrain;
         }

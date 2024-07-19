@@ -26,7 +26,7 @@ namespace Autopujcovna_DreamRide.Models
         [StringLength(25)]
         [Required(ErrorMessage = "Volba typu auta je povinná")]
         [Display(Name = "Typ karosérie")]
-        public string TypeOfCar { get; set; } = "";     // e.g. Sedan, Coupé, Limusine, Crossover, Hatchback, Cabriolet,
+        public string Body { get; set; } = "";     // e.g. Sedan, Coupé, Limusine, Crossover, Hatchback, Cabriolet,
 
         [StringLength(25)]
         [Required(ErrorMessage = "Volba typu paliva je povinná")]
@@ -38,9 +38,9 @@ namespace Autopujcovna_DreamRide.Models
         [Required(ErrorMessage = "Typ motoru musí být vyplněn")]
         [Display(Name = "Označení motoru")]
         public string EngineType { get; set; } = "Unknown"; // typ motoru - e. g. V8, V6, B13
-        
+
         [Display(Name = "Objem motoru")]
-        public float? EngineDisplacement { get; set; } // objem motoru v l
+        public float EngineDisplacement { get; set; } = 999;// objem motoru v l
 
         [Range(1, 5000, ErrorMessage = "Výkon v kW musí být v rozsahu 1 - 5000 kW")]
         [Display(Name = "Výkon v kW")]

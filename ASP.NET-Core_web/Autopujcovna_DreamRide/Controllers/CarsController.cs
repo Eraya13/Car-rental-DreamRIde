@@ -50,13 +50,16 @@ namespace Autopujcovna_DreamRide.Controllers
             }
 
             var car = await _context.Cars
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(model => model.Id == id);
             if (car == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            var CarDetail = new CarDetailViewModel(car.Id, car.Label, car.Model, car.TopSpeedKmForHour, car.PowerInKw,
+                        car.Transmission, car.YearOfManufacture, car.EngineDisplacement, car.EngineType, car.DriveTrain, car.Fuel, car.Body);
+
+            return View(CarDetail);
         }
 
         // GET: Cars/Create
@@ -68,7 +71,7 @@ namespace Autopujcovna_DreamRide.Controllers
         // POST: Cars/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,Label,Model,YearOfManufacture,Body,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +101,7 @@ namespace Autopujcovna_DreamRide.Controllers
         // POST: Cars/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Label,Model,YearOfManufacture,TypeOfCar,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Label,Model,YearOfManufacture,Body,Fuel,TopSpeedKmForHour,EngineType,EngineDisplacement,PowerInKw,Transmission,DriveTrain")] Car car)
         {
             if (id != car.Id)
             {

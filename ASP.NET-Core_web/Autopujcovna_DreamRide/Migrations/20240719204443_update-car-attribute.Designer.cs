@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Autopujcovna_DreamRide.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240717174223_Updated-car-model")]
-    partial class Updatedcarmodel
+    [Migration("20240719204443_update-car-attribute")]
+    partial class updatecarattribute
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,12 +33,17 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
                     b.Property<string>("DriveTrain")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<float?>("EngineDisplacement")
+                    b.Property<float>("EngineDisplacement")
                         .HasColumnType("real");
 
                     b.Property<string>("EngineType")
@@ -70,11 +75,6 @@ namespace Autopujcovna_DreamRide.Migrations
                     b.Property<string>("Transmission")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Body")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
 
                     b.Property<int>("YearOfManufacture")
                         .HasColumnType("int");
