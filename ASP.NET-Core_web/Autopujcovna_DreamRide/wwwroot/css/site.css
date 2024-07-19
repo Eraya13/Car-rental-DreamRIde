@@ -249,18 +249,16 @@ header nav li:hover {
     }
 
 .back-btn {
-    background-color: #575555;
+    background-color: grey;
     color: white;
     font-size: 1.5rem;
     border-radius: 0.75rem;
 }
+
     .back-btn:hover {
         background-color: #3b3a3a;
         color: white;
     }
-
-
-
 
 .btn-general {
     background-color: #b50909;
@@ -272,6 +270,22 @@ header nav li:hover {
         background-color: white;
         color: #b50909;
     }
+
+/*padding for car-edit/add*/
+.car-btn-back-pos {
+    justify-content: flex-end !important;
+    padding-left: 40rem;
+}
+
+.car-btn-submit-pos {
+    justify-content: flex-end !important;
+}
+
+.btn-pos-end {
+    justify-content: flex-end !important;
+    margin-right: 10rem;
+}
+
 
 .container-flex-row {
     display: flex;
@@ -333,22 +347,6 @@ header nav li:hover {
     right: 50px;
 }
 
-/*padding for car-edit/add*/
-.car-btn-back-pos {
-    justify-content: flex-end !important;
-    padding-left: 40rem;
-}
-
-.car-btn-submit-pos {
-    justify-content: flex-end !important;
-}
-
-.btn-pos-end {
-    justify-content: flex-end !important;
-    margin-right: 10rem;
-}
-
-
 .h2-card {
     font-size: 2.5rem;
     -webkit-text-stroke: 1.2px black;
@@ -372,6 +370,118 @@ header nav li:hover {
     -webkit-text-stroke: 0.3px black;
 }
 
+/**Details-car***/
+.img-car {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center; /* Vycentruje obrázek v kontejneru */
+    border: 2px solid white;
+}
+
+.img-icon {
+    width: 4rem;
+    margin: 1.0rem;
+    margin-left: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 2rem;
+    margin: 5rem 0rem;
+}
+
+    .grid-container h1 {
+        font-size: 2rem
+    }
+
+.grid-tile {
+    background: rgb(138, 136, 136);
+    border: 4px solid white;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+}
+
+.grid-tile-value {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.invite-txt {
+    font-family: Verdana;
+    transform: skewX(-5deg);
+    font-weight: 500;
+    font-size: 1.9rem;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    background-color: grey;
+    color: white;
+}
+
+.btn-details-pos {
+    margin-right: 5rem;
+}
+
+.btn-back-pos {
+    margin-left: 10rem;
+}
+
+.back-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
+}
+
+.details-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
+}
+
+/*Kontejner tlačítek back a půjčit auto*/
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/*Pořadí pro tlačítka vedle sebe*/
+.start-pos {
+    order: 1;
+}
+
+.end-pos {
+    order: 2;
+}
+
+.back-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
+}
+
+.details-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
+}
+
+@media (max-width: 1420px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Zalomení řádku*/
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .grid-tile {
+        font-size: 1.3rem;
+    }
+}
+
+
+/*Pozadí*/
 .bg-content {
     background-image: url('../images/grey-light.jpg');
     background-repeat: no-repeat;

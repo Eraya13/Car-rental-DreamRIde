@@ -1,84 +1,69 @@
-﻿@model Autopujcovna_DreamRide.Models.Car
+﻿@model Autopujcovna_DreamRide.Models.ViewModels.CarDetailViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.FullName;
 }
 
-<h1>Details</h1>
+<section class="container">
+    <img class="img-car" src="images/Subaru_BRZ -edit.jpg" alt="subaru">
+    <!-- car parameters -->
+    <section class="grid-container">
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Max rychlost</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Výkon</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Převodovka</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="~/images/" alt="transsmission">
+            <h1>Rok výroby</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Motor</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Pohon</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Karosérie</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+        <div class="grid-tile">
+            <img class="img-icon" src="/images/gearshift.png" alt="transsmission">
+            <h1>Palivo</h1>
+            <p class="grid-tile-value">240 km/h</p>
+        </div>
+    </section>
+    <p class="invite-txt">
+        Splňte si svůj sen za volantem Subaru BRZ!
+        Výkonný motor, precizní řízení a lehký podvozek, to musíte zkusit. Tak neváhejte, půjčte si ho a vychutnejte si každou zatáčku naplno!
+    </p>
+</section>
 
-<div>
-    <h4>Car</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.YearOfManufacture)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.YearOfManufacture)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DriveTrain)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DriveTrain)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TypeOfCar)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TypeOfCar)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EngineType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EngineType)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EngineDisplacement)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EngineDisplacement)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Transmission)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Transmission)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TopSpeedKmForHour)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TopSpeedKmForHour)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PowerInKw)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PowerInKw)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fuel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fuel)
-        </dd>
-    </dl>
+<div class="btn-container">
+    <div class="start-pos btn-back-pos">
+        <a class="btn back-btn" alt="return to menu">Návrat do nabídky</a>
+    </div>
+    <div class="end-pos btn-details-pos">
+        <a class="btn section-btn details-btn">Půjčit si auto</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+
+    <a asp-action="Edit" asp-route-id="@Model.CarId">Edit</a>
     <a asp-action="Index">Back to List</a>
 </div>
