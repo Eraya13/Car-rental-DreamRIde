@@ -245,6 +245,7 @@
       color: white;
       font-size: 1.7rem;
       border-radius: 0.75rem;
+      background-color: #b86110;
   }
       .btn-general:hover {
           background-color: white;

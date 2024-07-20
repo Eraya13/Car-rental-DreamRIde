@@ -4,11 +4,9 @@
     Layout = LayoutPaths.CarManagement;
 }
 
-
-
 <div class="container">
     <p>
-        <a asp-action="Create" class="btn ">Přidat auto</a>
+        <a asp-action="Create" class="btn btn-create">+ Přidat auto</a>
     </p>
     <section class="cars-grid">
         @for (int i = 0; i < Model.Count; i++)
@@ -39,11 +37,10 @@
                             </li>
                         </ul>      
                     </a>
-                <div>
-                <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a>
-                <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
-                <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>h
-            </div>
+                <div class="btns-admin">
+                    <a asp-action="Edit" asp-route-id="@Model[i].Id" class="btn btn-edit">Upravit</a>
+                    <a asp-action="Delete" asp-route-id="@Model[i].Id" class="btn section-btn btn-delete">Odstranit</a>
+                </div>
                 </section>
             </div>
         }

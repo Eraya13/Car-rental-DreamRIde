@@ -11,7 +11,7 @@ html, body {
 .relative-container {
     position: relative;
 }
-        /**--------My css--------**/
+/**--------My css--------**/
 
 /**Overide bootstrap form-button-shadow*/
 .form-control:focus {
@@ -41,21 +41,21 @@ html, body {
 
 /* Výchozí styl odkazu */
 a {
-    color: black; 
-    text-decoration: underline;
+    color: black;
+    text-decoration: none;
 }
 
     /* Stylování odkazu při najetí myší a fókusování */
     a:hover,
     a:focus {
-        color: black; 
-        text-decoration: underline; 
+        color: black;
+        text-decoration: none;
     }
 
 /* Třída pro odkazy bez podtržení a se zachováním barvy textu */
-.no-style-link {
+.style-link {
     color: inherit; /* Ponechá barvu textu odkazu stejnou jako okolní text */
-    text-decoration: none; /* Odstraní podtržení */
+    text-decoration: underline; /* Odstraní podtržení */
 }
 
     .no-style-link:hover,
@@ -321,8 +321,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
 /*Buttons*/
 .section-btn {
     background-color: #b50909;
@@ -358,20 +356,49 @@ h1, h2, h3, h4, h5, h6 {
     .btn-general:hover {
         background-color: white;
         color: #b50909;
+        text-decoration: none;
     }
 
 /*Buttons admin*/
-
 .btn-create {
+    display: block; /* Nebo inline-block, pokud preferujete */
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #0cae32;
+    color: white;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 0.50rem;
+    transition: transform 0.35s, background-color 0.35s;
+}
 
+    .btn-create:hover {
+        background-color: #077421;
+        color: inherit;
+        transform: scale(0.95);
+        text-decoration: none;
+    }
+
+.btn-edit,
+.btn-delete {
+    font-size: 1.5rem;
 }
 
 .btn-edit {
-
+    background-color: #ee7c0e;
+    color: white;
+    border-radius: 0.75rem;
 }
 
-.btn-delete {
+    .btn-edit:hover {
+        background-color: #b86110;
+        color: white;
+    }
 
+.btns-admin {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3rem 1.2rem;
 }
 
 
