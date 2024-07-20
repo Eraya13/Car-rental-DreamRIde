@@ -244,6 +244,8 @@
       background-color: #b50909;
       color: white;
       font-size: 1.7rem;
+      border-radius: 0.75rem;
+      padding: 1.2rem 2rem;
   }
       .btn-general:hover {
           background-color: white;
@@ -410,7 +412,6 @@
     padding: 1.2rem;
 }
 
-
 .details-btn {
     font-size: 2.0rem;
     padding: 1.2rem;
@@ -455,6 +456,135 @@
     .grid-tile {
         font-size: 1.3rem;
     }
+}
+
+
+/*Nabídka aut - karty aut*/
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 4rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.car-removal-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Dvě sloupce, první 1fr, druhý 2fr */
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.warning-delete {
+    padding-top: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.decision-btns {
+    display: flex;
+    justify-content: space-between !important;
+    margin: 4rem 10rem;
+}
+
+.yes-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: red;
+    transition: transform 0.15s;
+}
+
+/*uživatel bude přesměrován zpět do nabídky*/
+.no-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: grey;
+    transition: transform 0.15s;
+}
+
+.no-btn:hover {
+    transform: scale(1.10);
+    background-color: #444;
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.10);
+    background-color: #690404;
+    color: white;
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-card {
+    padding: 0.2rem; /* Vnější okraje kolem vnitřní karty */
+    background-color: grey; /* Stejná barva jako karta */
+    border-radius: 10px; /* Přidá stejný rádius jako karta */
+    box-sizing: border-box;
+    transition: transform 0.25s;
+}
+
+.outer-card:hover {
+    transform: scale(0.95);
+    padding-bottom: 0;
+    border-bottom: 5px solid rgb(167, 6, 6);
+}
+
+.car-card {
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: grey;
+    color: black;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 4px solid black;
+    transition: transform 0.25s;
+    overflow: hidden;
+}
+
+.car-card:hover {
+    border-bottom: 0px;
+}
+
+.car-card h2 {
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    transition: color 0.1s;   /*ovlivňuje rychlost změny pro hover*/
+}
+
+.car-card:hover h2 {
+    color: rgb(167, 6, 6);
+}
+
+.img-car-in-card {
+    max-width: 100%; /* Zajišťuje, že obrázek nepřekročí šířku karty */
+    height: 30vh; 
+    min-height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.car-attributes {
+    list-style-type: none;
+    padding-left: 2rem;
+}
+
+.car-attributes li { 
+    line-height: 1.7rem;
+    margin-bottom: 0.5rem;
 }
 
 .bg-content {
