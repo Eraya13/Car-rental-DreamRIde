@@ -1,82 +1,47 @@
-﻿@model Autopujcovna_DreamRide.Models.Car
+﻿@model Autopujcovna_DreamRide.Models.ViewModels.BriefCarViewModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Odstranění auta";
     Layout = LayoutPaths.CarManagement;
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Car</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.YearOfManufacture)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.YearOfManufacture)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EngineType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EngineType)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EngineDisplacement)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EngineDisplacement)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Transmission)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Transmission)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TopSpeedKmForHour)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TopSpeedKmForHour)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PowerInKw)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PowerInKw)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fuel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fuel)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<div class="container">
+    <section class="car-removal-grid">
+        <div class="outer-card no-hover">
+            <section class="car-card">
+                <div class="img-wrapper">
+                    <img class="img-car-in-card" src="~/images/audi-tt.png" alt="Audi TT">
+                </div>
+                <h2>Audi TT</h2>
+                <ul class="car-attributes">
+                    <li>
+                        @Html.DisplayNameFor(model => model.Engine)
+                        @Html.DisplayFor(model => model.Engine)
+                    </li>
+                    <li>
+                        @Html.DisplayNameFor(model => model.Power)
+                        @Html.DisplayFor(model => model.Power) kW
+                    </li>
+                    <li>
+                        @Html.DisplayNameFor(model => model.Transmission)
+                        @Html.DisplayFor(model => model.Transmission)
+                    </li>
+                    <li>
+                        @Html.DisplayNameFor(model => model.DriveTrain)
+                        @Html.DisplayFor(model => model.DriveTrain)
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div>
+            <p class="warning-delete">
+                Opravdu chcete vyřadit auto z aktuální nabídky aut?
+            </p>
+            <form asp-action="Delete" class="decision-btns">
+                <a asp-action="Index" class="btn btn-general no-btn">Ne</a>
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" value="Delete" class="btn btn-general yes-btn">Ano</button>
+            </form>
+        </div>
+    </section>
 </div>

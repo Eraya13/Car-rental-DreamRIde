@@ -7,69 +7,42 @@
 <p>
     <a asp-action="Create">Přidat auto</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].Engine)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].Transmission)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].DriveTrain)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @* temer mam hotovo ještě musím akorát zařídit, aby se mi zobrazovala hodnota ve switchi*@
+
+<div class="container">
+    <section class="cars-grid">
         @for (int i = 0; i < Model.Count; i++)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => Model[i].Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => Model[i].Engine)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => Model[i].Transmission)
-                </td>
-                <td>
-                    @{
-                        string pohonText;
-                        switch (Model[i].DriveTrain)
-                        {
-                            case "FWD":
-                                pohonText = "Přední náhon (FWD)";
-                                break;
-                            case "RWD":
-                                pohonText = "Zadní náhon (RWD)";
-                                break;
-                            case "AWD":
-                                pohonText = "Pohon na všechna kola (AWD)";
-                                break;
-                            case "4x4":
-                            case "4X4":
-                                pohonText = "Pohon na všechna kola (4x4)";
-                                break;
-                            default:
-                                pohonText = "Neznámý";
-                                break;
-                        }
-                    }
-                    @pohonText
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a> |
-                    <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
-                    <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>
-                </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <div class="outer-card">
+                <section class="car-card">
+                    <div class="img-wrapper">
+                        <img class="img-car-in-card" src="~/images/audi-tt.png" alt="Audi TT">
+                    </div>
+                    <h2>Audi TT</h2>
+                    <ul class="car-attributes">
+                        <li>
+                            @Html.DisplayNameFor(model => model[i].Engine)
+                            @Html.DisplayFor(model => model[i].Engine)
+                        </li>
+                        <li>
+                            @Html.DisplayNameFor(model => model[i].Power)
+                            @Html.DisplayFor(model => model[i].Power) kW
+                        </li>
+                        <li>
+                            @Html.DisplayNameFor(model => model[i].Transmission)
+                            @Html.DisplayFor(model => model[i].Transmission)
+                        </li>
+                        <li>
+                            @Html.DisplayNameFor(model => model[i].DriveTrain)
+                            @Html.DisplayFor(model => model[i].DriveTrain)
+                        </li>
+                    </ul>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a>
+                        <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
+                        <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>h
+                    </div>
+                </section>
+            </div>
+        }
+    </section>
+</div>

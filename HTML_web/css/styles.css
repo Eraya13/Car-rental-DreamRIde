@@ -245,7 +245,6 @@
       color: white;
       font-size: 1.7rem;
       border-radius: 0.75rem;
-      padding: 1.2rem 2rem;
   }
       .btn-general:hover {
           background-color: white;
@@ -458,64 +457,13 @@
     }
 }
 
-
 /*Nabídka aut - karty aut*/
-
 .cars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 4rem;
     width: 100%;
     margin-bottom: 5rem;
-}
-
-.car-removal-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Dvě sloupce, první 1fr, druhý 2fr */
-    gap: 3rem;
-    width: 100%;
-    margin-bottom: 5rem;
-}
-
-.warning-delete {
-    padding-top: 4rem;
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-.decision-btns {
-    display: flex;
-    justify-content: space-between !important;
-    margin: 4rem 10rem;
-}
-
-.yes-btn {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 1.2rem 3rem;
-    background-color: red;
-    transition: transform 0.15s;
-}
-
-/*uživatel bude přesměrován zpět do nabídky*/
-.no-btn {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 1.2rem 3rem;
-    background-color: grey;
-    transition: transform 0.15s;
-}
-
-.no-btn:hover {
-    transform: scale(1.10);
-    background-color: #444;
-    color: white;
-}
-
-.yes-btn:hover {
-    transform: scale(1.10);
-    background-color: #690404;
-    color: white;
 }
 
 .img-wrapper {
@@ -585,6 +533,56 @@
 .car-attributes li { 
     line-height: 1.7rem;
     margin-bottom: 0.5rem;
+}
+
+/*Delete car*/
+.car-removal-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Dvě sloupce, první 1fr, druhý 2fr */
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.warning-delete {
+    padding-top: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.decision-btns {
+    display: flex;
+    justify-content: space-between !important;
+    margin: 4rem 10rem;
+}
+
+.yes-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: red;
+    transition: transform 0.15s;
+}
+
+/*uživatel bude přesměrován zpět do nabídky*/
+.no-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: grey;
+    transition: transform 0.15s;
+}
+
+.no-btn:hover {
+    transform: scale(1.10);
+    background-color: #444;
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.10);
+    background-color: #690404;
+    color: white;
 }
 
 .bg-content {

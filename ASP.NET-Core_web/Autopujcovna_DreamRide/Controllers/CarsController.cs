@@ -32,6 +32,7 @@ namespace Autopujcovna_DreamRide.Controllers
                         car.Model,
                         car.EngineType,
                         car.EngineDisplacement,
+                        car.PowerInKw,
                         car.Transmission,
                         car.DriveTrain
                     );
@@ -139,14 +140,19 @@ namespace Autopujcovna_DreamRide.Controllers
                 return NotFound();
             }
 
+
             var car = await _context.Cars
                 .FirstOrDefaultAsync(m => m.Id == id);
+            
             if (car == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            var briefCarInfo = new BriefCarViewModel (car.Id, car.Label, car.Model, car.EngineType,
+                        car.EngineDisplacement, car.PowerInKw, car.Transmission, car.DriveTrain);
+
+            return View(briefCarInfo);
         }
 
         // POST: Cars/Delete/5
