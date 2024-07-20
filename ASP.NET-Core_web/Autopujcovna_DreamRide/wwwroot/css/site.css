@@ -11,17 +11,93 @@ html, body {
 .relative-container {
     position: relative;
 }
+        /**--------My css--------**/
 
-/*My css*/
-/*upravene html element DOM*/
-/*default styl webu*/
+/**Overide bootstrap form-button-shadow*/
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-select:focus {
+    border-color: #050404;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
+}
+
+.form-check-input:focus {
+    border-color: #080808;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: #b50909;
+    border-color: #ef7f7f;
+}
+
+/* Výchozí styl odkazu */
+a {
+    color: black; 
+    text-decoration: underline;
+}
+
+    /* Stylování odkazu při najetí myší a fókusování */
+    a:hover,
+    a:focus {
+        color: black; 
+        text-decoration: underline; 
+    }
+
+/* Třída pro odkazy bez podtržení a se zachováním barvy textu */
+.no-style-link {
+    color: inherit; /* Ponechá barvu textu odkazu stejnou jako okolní text */
+    text-decoration: none; /* Odstraní podtržení */
+}
+
+    .no-style-link:hover,
+    .no-style-link:focus {
+        color: inherit; /* Ponechá barvu textu odkazu stejnou jako okolní text */
+        text-decoration: none; /* Odstraní podtržení */
+    }
+
+/*Header only*/
+header {
+    height: 5.5rem;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-bottom: 2px solid white; /*border celého headeru!*/
+}
+
+    header nav ul { /*pro header je jiná nez u footer*/
+        display: flex;
+        gap: 3rem;
+        list-style-type: none;
+        padding-right: 3rem;
+    }
+
+.header-font-black {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #10070C;
+}
+
 
 /*"Logo settings*/
-
 .logo img { /*toto říká, že img pod classou .logo*/
     padding-left: 10rem;
     height: 6rem;
     max-width: 100%; /* Zabraňuje přetékání šířky */
+    padding-bottom: 0.5rem;
 }
 
 .bigger-logo img {
@@ -29,22 +105,114 @@ html, body {
     max-width: 100%;
 }
 
-/*hover thing*/
 .bigger-logo:hover,
 .logo:hover {
     transform: scale(1.05);
     filter: contrast(120%);
 }
 
-a:hover {
-    color: currentColor;
+/*header and footer classes*/
+header a,
+footer a {
+    color: white;
+    text-decoration: none;
+    text-underline-offset: 15px; /* Vzdálenost mezi textem a podtržením */
+    padding: 4px; /* Rozestupy kolem odkazu */
+    transition: color 0.3s, text-decoration 0.3s, text-underline-offset 0.3s; /* Hladký přechod pro barvu a podtržení */
 }
+
+    /* Styl při hoveru pro navigační odkazy v header a footer */
+    header a:hover,
+    footer a:hover {
+        color: inherit;
+        text-decoration: underline; /* Podtržení při hoveru */
+        text-underline-offset: 15px; /* Vzdálenost mezi textem a podtržením při hoveru */
+    }
+
+.title-header {
+    margin-bottom: 1rem;
+}
+
+.nav-link {
+    color: inherit; /* Použije barvu textu z nadřazeného prvku (header nebo footer) */
+    text-decoration: none;
+}
+
+    /* Styl při hoveru pro navigační odkazy */
+    .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 15px; /* Vzdálenost mezi textem a podtržením */
+    }
+
+/*-----footer settings-----*/
+footer {
+    width: 100%;
+    padding-top: 2rem;
+    margin-top: auto; /*musí být footer tlačen dolů*/
+    border-top: 2px solid white;
+}
+
+    footer nav {
+        padding: 0.5rem;
+    }
+
+        footer nav ul {
+            list-style-type: none;
+        }
+
+        footer nav li {
+            padding-bottom: 1rem;
+        }
+
+    footer h2 { /*stil sans serif*/
+        font-weight: 400;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moto-font {
+    font-family: Helvetica;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    text-align: center;
+}
+
+.footer-links {
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.createdBy {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.4rem;
+    padding-bottom: 0.5rem;
+    background-color: #444;
+    grid-column: span 3;
+}
+
+    .createdBy a:hover {
+        color: black; /* Nastaví barvu odkazu na černou při hoveru */
+        text-decoration: none; /* Odstraní podtržení */
+    }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
-
-
 
 /*T R B L*/
 .content-general {
@@ -86,62 +254,6 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
     display: flex;
     align-items: center; /* Vertikální zarovnání na střed */
-}
-
-.title-header {
-    margin-bottom: 1rem;
-}
-
-/*header classes*/
-header {
-    height: 6rem;
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid white;
-}
-
-    header nav ul { /*pro header je jiná nez u footer*/
-        display: flex;
-        gap: 3rem;
-    }
-
-nav ul {
-    list-style-type: none;
-    padding-right: 3rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
-
-footer nav li {
-    padding-bottom: 1rem;
-}
-
-.gap {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-}
-
-header nav li:hover {
-    border-bottom: white solid;
-}
-
-.header-font {
-    font-weight: 600;
-    font-size: 1.8rem;
-    color: white;
-}
-
-.header-font-black {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #10070C;
 }
 
 /*Article / section classes*/
@@ -208,31 +320,7 @@ header nav li:hover {
     color: white;
 }
 
-/**Overide bootstrap form-button-shadow*/
-.form-control:focus {
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
-    border-color: #050404;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
-}
 
-.form-select:focus {
-    border-color: #050404;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(3, 3, 3, 0.25);
-}
-
-.form-check-input:focus {
-    border-color: #080808;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(170, 8, 8, 0.25);
-}
-
-.form-check-input:checked {
-    background-color: #b50909;
-    border-color: #ef7f7f;
-}
 
 
 /*Buttons*/
@@ -272,6 +360,21 @@ header nav li:hover {
         color: #b50909;
     }
 
+/*Buttons admin*/
+
+.btn-create {
+
+}
+
+.btn-edit {
+
+}
+
+.btn-delete {
+
+}
+
+
 /*padding for car-edit/add*/
 .car-btn-back-pos {
     justify-content: flex-end !important;
@@ -286,7 +389,6 @@ header nav li:hover {
     justify-content: flex-end !important;
     margin-right: 10rem;
 }
-
 
 .container-flex-row {
     display: flex;
@@ -654,63 +756,6 @@ header nav li:hover {
     background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
     background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
     background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
-}
-
-/*-----footer settings-----*/
-footer {
-    width: 100%;
-    border-top: 2px solid white;
-}
-
-.footer-nav {
-    padding: 1rem;
-}
-
-footer h2 { /*stil sans serif*/
-    font-weight: 400;
-    font-size: 2rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.label-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.moto-font {
-    font-family: Helvetica;
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-    padding-left: 4rem;
-}
-
-footer {
-    width: 100%;
-    padding-top: 2rem;
-    margin-top: auto; /*musí být footer tlačen dolů*/
-}
-
-.footer-links {
-    font-size: 1.5rem;
-    font-family: 'Inter', sans-serif;
-}
-
-footer nav li:hover {
-    text-decoration: underline;
-    text-underline-offset: 15px;
-}
-
-.createdBy {
-    text-align: center;
-    padding: 1rem;
-    background-color: #444;
-    grid-column: span 3; /*mozno dat jako separe tridu? dělat i třídy na takové věci?*/
 }
 
 /*general settings*/

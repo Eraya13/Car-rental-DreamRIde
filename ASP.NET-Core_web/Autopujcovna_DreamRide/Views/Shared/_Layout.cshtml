@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="page-container">
-        <header class="bg-gradient-red-black header-font">
+        <header class="bg-gradient-red-black">
             <div class="logo">
                 <a asp-controller="Home" asp-action="Index">
                     <img src="~/images/logo.png" alt="Logo">
@@ -59,7 +59,7 @@
                 <div><p class="moto-font">Proměňujeme touhy po jízdě v nezapomenutelné zážitky</p></div>
             </section>
             <section class="label-container">
-                <nav class="footer-nav">
+                <nav>
                     <h2 class="gap">Dream Ride</h2>
                     <ul class="footer-links">
                         <!-- Seznam polozek - lze přiradit classu-->
@@ -71,7 +71,7 @@
             </section>
             <section class="label-container">
                 <nav>
-                    <h2 class="gap">Informace</h2>
+                    <h2>Informace</h2>
                     <ul class="footer-links">
                         <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li>
                         <li><a asp-controller="Home" asp-action="Terms">Obchodní podmínky</a></li>
@@ -79,7 +79,7 @@
                 </nav>
             </section>
             <section class="createdBy">
-                <p class="sm">Created by &copy;Adéla Srbová @DateTime.Now.Year for <a href="https://itnetwork.cz"/>Itnetwork.cz</p>
+                <p class="sm">Vytvořila &copy;Adéla Srbová @DateTime.Now.Year pro<a href="https://itnetwork.cz"/>Itnetwork.cz</p>
             </section>
         </footer>
     </div>
