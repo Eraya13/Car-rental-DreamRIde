@@ -13,7 +13,7 @@
                         <div class="img-wrapper">
                             <img class="img-car-in-card" src="~/images/audi-tt.png" alt="Audi TT">
                         </div>
-                        <h2>Audi TT</h2>
+                        <h2>@Html.DisplayFor(model => model[i].Title)</h2>
                         <ul class="car-attributes">
                             <li>
                                 @Html.DisplayNameFor(model => model[i].Engine)

@@ -4,45 +4,49 @@
     Layout = LayoutPaths.CarManagement;
 }
 
-<p>
-    <a asp-action="Create">Přidat auto</a>
-</p>
+
 
 <div class="container">
+    <p>
+        <a asp-action="Create" class="btn ">Přidat auto</a>
+    </p>
     <section class="cars-grid">
         @for (int i = 0; i < Model.Count; i++)
         {
-            <div class="outer-card">
-                <section class="car-card">
-                    <div class="img-wrapper">
-                        <img class="img-car-in-card" src="~/images/audi-tt.png" alt="Audi TT">
-                    </div>
-                    <h2>Audi TT</h2>
-                    <ul class="car-attributes">
-                        <li>
-                            @Html.DisplayNameFor(model => model[i].Engine)
-                            @Html.DisplayFor(model => model[i].Engine)
-                        </li>
-                        <li>
-                            @Html.DisplayNameFor(model => model[i].Power)
-                            @Html.DisplayFor(model => model[i].Power) kW
-                        </li>
-                        <li>
-                            @Html.DisplayNameFor(model => model[i].Transmission)
-                            @Html.DisplayFor(model => model[i].Transmission)
-                        </li>
-                        <li>
-                            @Html.DisplayNameFor(model => model[i].DriveTrain)
-                            @Html.DisplayFor(model => model[i].DriveTrain)
-                        </li>
-                    </ul>
-                    <div>
-                        <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a>
-                        <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
-                        <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>h
-                    </div>
+                <div class="outer-card">
+                    <section class="car-card">
+                    <a asp-action="Details" asp-route-id="@Model[i].Id" class="no-style-link">
+                        <div class="img-wrapper">
+                            <img class="img-car-in-card" src="~/images/audi-tt.png" alt="Audi TT">
+                        </div>
+                        <h2>Audi TT</h2>
+                        <ul class="car-attributes">
+                            <li>
+                                @Html.DisplayNameFor(model => model[i].Engine)
+                                @Html.DisplayFor(model => model[i].Engine)
+                            </li>
+                            <li>
+                                @Html.DisplayNameFor(model => model[i].Power)
+                                @Html.DisplayFor(model => model[i].Power) kW
+                            </li>
+                            <li>
+                                @Html.DisplayNameFor(model => model[i].Transmission)
+                                @Html.DisplayFor(model => model[i].Transmission)
+                            </li>
+                            <li>
+                                @Html.DisplayNameFor(model => model[i].DriveTrain)
+                                @Html.DisplayFor(model => model[i].DriveTrain)
+                            </li>
+                        </ul>      
+                    </a>
+                <div>
+                <a asp-action="Edit" asp-route-id="@Model[i].Id">Editace údajů</a>
+                <a asp-action="Details" asp-route-id="@Model[i].Id">Zobrazit auto</a> |
+                <a asp-action="Delete" asp-route-id="@Model[i].Id">Smazat auto</a>h
+            </div>
                 </section>
             </div>
         }
     </section>
 </div>
+
