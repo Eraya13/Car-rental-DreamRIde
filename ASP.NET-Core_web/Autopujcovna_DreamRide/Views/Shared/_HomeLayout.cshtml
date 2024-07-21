@@ -6,15 +6,15 @@
     <meta name="keywords" content="auta, webový projekt, Adéla Srbová, zážitkové jízdy" />
     <meta name="author" content="Adéla Srbová" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>@ViewData["Title"] - DreamRide Autopůjčovna</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    
+
     <link rel="icon" href="~/logo.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />  
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />       @*nezapomenout styly nakopirovat sem - toto přepíše bootstrap*@
 </head>
 <body>
@@ -28,19 +28,18 @@
             <nav>
                 <ul class="navbar nav flex-grow-1">
                     @* použití viewu jiného controlleru -> navBar přesměruje na jeden view a ten dále bude komunikovat s dalšími (budou na sebe třeba navazovat odkazy)*@
-                    <li><a asp-controller="Cars" asp-action="Index">Nabídka všech aut</a></li>
+                    <li><a asp-controller="Cars" asp-action="Index">Přehled všech aut</a></li>
                     <li><a asp-controller="Requests" asp-action="CarReservation">Rezervace auta</a></li>
-                    @*<!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
+                    @*                     <li><a asp-controller="Account" asp-action="Register">Registrace</a></li>
+                    <li><a asp-controller="Account" asp-action="Login">Přihlášení</a></li> *@
+                    <!-- <li><a asp-controller="Home" asp-action="FAQ">Časté dotazy</a></li> -->
                     <!-- <li><a asp-controller="Home" asp-action="AboutUs">O nás</a></li> -->
-                    <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li> *@
+                    @* <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li> *@
+
                 </ul>
             </nav>
         </header>
-
-        <div class="container">
-            <header class="title-header">
-                <h1 class="p-title">@ViewData["Title"]</h1>
-            </header>
+        <div class="no-borders-container">
             <main class="content-wrap">
                 @RenderBody()
             </main>
@@ -75,7 +74,7 @@
                 </nav>
             </section>
             <section class="createdBy">
-                <p class="sm">Vytvořila &copy;Adéla Srbová @DateTime.Now.Year pro<a href="https://itnetwork.cz"/>Itnetwork.cz</p>
+                <p class="sm">Vytvořila &copy;Adéla Srbová @DateTime.Now.Year pro<a href="https://itnetwork.cz" />Itnetwork.cz</p>
             </section>
         </footer>
     </div>

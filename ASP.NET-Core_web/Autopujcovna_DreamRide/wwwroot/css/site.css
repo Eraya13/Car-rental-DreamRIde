@@ -282,11 +282,6 @@ footer {
 
 /***form classes***/
 
-.form-title {
-    font-weight: 600;
-    text-align: center;
-}
-
 .label-names {
     font-size: 1.5rem;
 }
@@ -313,14 +308,16 @@ footer {
     color: white;
 }
 
+.form-title {
+    font-weight: 600;
+    text-align: center;
+}
 
 /*margin 4: T R B L -- like clock*/
 /*margin 2: TB RL;*/
 .form-spacing {
-    padding: 3rem 3rem;
+    padding: 2rem 3rem;
 }
-
-
 
 /*Buttons*/
 .section-btn {
@@ -404,7 +401,6 @@ footer {
 /* Třídy upravující pozice tlačítek */
 .car-btn-back-pos {
     justify-content: flex-end !important;
-    padding-left: 35rem;
 }
 
 .car-btn-submit-pos {
@@ -544,10 +540,8 @@ footer {
     min-height: 100vh;
 }
 
-.main-container {
+.no-borders-container {
     width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 /****Sections*****/
