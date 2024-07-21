@@ -10,9 +10,9 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         // přiřazené auto k Request
         public int? CarId { get; set; } = null;
 
-        [Required (ErrorMessage = "Je nutné si zvolit auto, které si chcete půjčit")]
-        [Display (Name = "Auto")]
-        public string CarName { get; set; }
+        [Required(ErrorMessage = "Je nutné si zvolit auto, které si chcete půjčit")]
+        [Display(Name = "Auto")]
+        public string CarName { get; set; } = "";
         
         // Client values:
         [Required(ErrorMessage = "Jméno je povinný údaj")]
