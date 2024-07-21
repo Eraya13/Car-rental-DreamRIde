@@ -11,8 +11,8 @@ html, body {
 .relative-container {
     position: relative;
 }
-/**--------My css--------**/
 
+/**--------My css--------**/
 /**Overide bootstrap form-button-shadow*/
 .form-control:focus {
     color: var(--bs-body-color);
@@ -43,6 +43,25 @@ html, body {
 a {
     color: black;
     text-decoration: none;
+}
+
+.alert-color {
+    background-color: purple;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.a-left {
+    text-align: left;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
 }
 
     /* Stylování odkazu při najetí myší a fókusování */
@@ -210,16 +229,6 @@ footer {
         text-decoration: none; /* Odstraní podtržení */
     }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif;
-}
-
-/*T R B L*/
-.content-general {
-    padding: 0 8rem 3rem 8rem;
-    display: flex;
-    flex-direction: column;
-}
 
 /**registration central*/
 .centre-form {
@@ -239,22 +248,6 @@ h1, h2, h3, h4, h5, h6 {
     .form-check-container .form-check-input {
         margin-right: 1rem; /* Nastavíme mezeru mezi zaškrtávacím políčkem a tlačítkem */
     }
-
-.content-wrap {
-    flex: 1; /* This makes sure the main content takes up the available space */
-}
-
-/*margin 2: TB RL; 4: T R B L*/
-
-.p-title {
-    font-weight: 600;
-    font-size: 2.5rem;
-    padding-top: 1.0rem;
-    padding-left: 4rem;
-    color: inherit;
-    display: flex;
-    align-items: center; /* Vertikální zarovnání na střed */
-}
 
 /*Article / section classes*/
 .article-spacing {
@@ -321,6 +314,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/*margin 4: T R B L -- like clock*/
+/*margin 2: TB RL;*/
+.form-spacing {
+    padding: 3rem 3rem;
+}
+
+
+
 /*Buttons*/
 .section-btn {
     background-color: #b50909;
@@ -331,18 +332,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .section-btn:hover {
         background-color: #890505;
-        color: white;
-    }
-
-.back-btn {
-    background-color: grey;
-    color: white;
-    font-size: 1.5rem;
-    border-radius: 0.75rem;
-}
-
-    .back-btn:hover {
-        background-color: #3b3a3a;
         color: white;
     }
 
@@ -360,6 +349,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 /*Buttons admin*/
+.btn-back {
+    background-color: grey;
+    color: white;
+    font-size: 1.7rem;
+    border-radius: 0.75rem;
+}
+
+    .btn-back:hover {
+        background-color: #3b3a3a;
+        color: white;
+    }
+
 .btn-create {
     display: block; /* Nebo inline-block, pokud preferujete */
     box-sizing: border-box;
@@ -395,17 +396,15 @@ h1, h2, h3, h4, h5, h6 {
         color: white;
     }
 
-.btns-admin {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.3rem 1.2rem;
+.details-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
 }
 
-
-/*padding for car-edit/add*/
+/* Třídy upravující pozice tlačítek */
 .car-btn-back-pos {
     justify-content: flex-end !important;
-    padding-left: 40rem;
+    padding-left: 35rem;
 }
 
 .car-btn-submit-pos {
@@ -417,6 +416,93 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 10rem;
 }
 
+.btn-back-pos {
+    justify-content: space-between;
+    margin-left: 10rem;
+}
+
+.btns-admin {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3rem 1.2rem;
+}
+
+.btn-pos {
+    position: absolute;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-down {
+    bottom: 40px;
+    right: 50px;
+}
+
+.btn-details-pos {
+    margin-right: 5rem;
+}
+
+/*Kontejner tlačítek - zobrazení auta - back a půjčit auto*/
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/*Pořadí pro tlačítka vedle sebe*/
+.start-pos {
+    order: 1;
+}
+
+.end-pos {
+    order: 2;
+}
+
+.details-btn {
+    font-size: 2.0rem;
+    padding: 1.2rem;
+}
+
+.decision-btns {
+    display: flex;
+    justify-content: space-between !important;
+    margin: 4rem 10rem;
+}
+
+.yes-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: red;
+    transition: transform 0.15s;
+}
+
+/*uživatel bude přesměrován zpět do nabídky*/
+.no-btn {
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    background-color: grey;
+    transition: transform 0.15s;
+}
+
+    .no-btn:hover {
+        transform: scale(1.10);
+        background-color: #444;
+        color: white;
+    }
+
+.yes-btn:hover {
+    transform: scale(1.10);
+    background-color: #690404;
+    color: white;
+}
+
+
+
+/* Containers + align content*/
 .container-flex-row {
     display: flex;
     justify-content: space-around;
@@ -429,14 +515,29 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%); /* Posune celý obsah o polovinu šířky zpět doleva */
 }
 
-/*margin 4: T R B L -- like clock*/
-/*margin 2: TB RL;*/
-.form-spacing {
-    padding: 3rem 3rem;
+.content-general {
+    padding: 0 8rem 3rem 8rem;
+    display: flex;
+    flex-direction: column;
 }
 
+.content-wrap {
+    flex: 1; /* This makes sure the main content takes up the available space */
+}
 
-/*zajišťuje aby se roztáhli všechny prvky a nezůstalo background body vidět*/
+/*margin 2: TB RL; 4: T R B L*/
+
+.p-title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-top: 1.0rem;
+    padding-left: 4rem;
+    color: inherit;
+    display: flex;
+    align-items: center; /* Vertikální zarovnání na střed */
+}
+
+/*zajišťuje aby se roztáhli všechny prvky a nikde nevyčuhovalo background body*/
 .page-container {
     display: flex;
     flex-direction: column;
@@ -465,18 +566,6 @@ h1, h2, h3, h4, h5, h6 {
         object-position: 50% 40%; /* Posune obrázek lehce nahoru, aby byl lehce oříznutý shora i zdola */
     }
 
-.btn-pos {
-    position: absolute;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-down {
-    bottom: 40px;
-    right: 50px;
-}
-
 .h2-card {
     font-size: 2.5rem;
     -webkit-text-stroke: 1.2px black;
@@ -500,7 +589,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-stroke: 0.3px black;
 }
 
-/**Details-car***/
+/** Details-car bez tlačítek***/
 .img-car {
     width: 100%;
     min-width: 800px;
@@ -551,51 +640,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 5rem;
     background-color: grey;
     color: white;
-}
-
-.btn-details-pos {
-    margin-right: 5rem;
-}
-
-.btn-back-pos {
-    margin-left: 10rem;
-}
-
-.back-btn {
-    font-size: 2.0rem;
-    padding: 1rem;
-}
-
-.details-btn {
-    font-size: 2.0rem;
-    padding: 1.2rem;
-}
-
-/*Kontejner tlačítek back a půjčit auto*/
-.btn-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-/*Pořadí pro tlačítka vedle sebe*/
-.start-pos {
-    order: 1;
-}
-
-.end-pos {
-    order: 2;
-}
-
-.back-btn {
-    font-size: 2.0rem;
-    padding: 1.2rem;
-}
-
-.details-btn {
-    font-size: 2.0rem;
-    padding: 1.2rem;
 }
 
 @media (max-width: 1420px) {
@@ -690,11 +734,11 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 0.5rem;
     }
 
-/*Delete car*/
+/*Delete car bez tlačítek*/
 .car-removal-grid {
     margin-top: 5rem;
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Dvě sloupce, první 1fr, druhý 2fr */
+    grid-template-columns: 1fr 2fr;
     gap: 3rem;
     width: 100%;
     margin-bottom: 5rem;
@@ -710,42 +754,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.decision-btns {
-    display: flex;
-    justify-content: space-between !important;
-    margin: 4rem 10rem;
-}
-
-.yes-btn {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 1.2rem 3rem;
-    background-color: red;
-    transition: transform 0.15s;
-}
-
-/*uživatel bude přesměrován zpět do nabídky*/
-.no-btn {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 1.2rem 3rem;
-    background-color: grey;
-    transition: transform 0.15s;
-}
-
-    .no-btn:hover {
-        transform: scale(1.10);
-        background-color: #444;
-        color: white;
-    }
-
-.yes-btn:hover {
-    transform: scale(1.10);
-    background-color: #690404;
-    color: white;
-}
-
-/*Pozadí*/
+/* Pozadí */
 .bg-content {
     background-image: url('../images/grey-light.jpg');
     background-repeat: no-repeat;
@@ -754,7 +763,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
-/**/
 .bg-grey {
     background-color: grey;
 }
@@ -783,25 +791,4 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(96deg, #a50505 0%, #10070C 40%);
     background: -webkit-linear-gradient(116deg, #a50505 8%, #10070C 80%);
     background: -moz-linear-gradient(96deg, #a50505 0%, #10070C 10%);
-}
-
-/*general settings*/
-.alert-color {
-    background-color: purple;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
-    font-family: "Inter", sans-serif;
-}
-
-.a-left {
-    text-align: left;
-}
-
-.sm {
-    font-size: 1rem;
 }
