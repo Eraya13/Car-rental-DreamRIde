@@ -7,37 +7,28 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
     public class RequestViewModel
     {
 
-        // Píšeme sem atributy Viewu, do kterých se má uložit nějaká hodnota proměnné z Viewu - odpovídá tedy políčkům formuláře
-        // přiřazené auto k Request (zatím neřešit moc)
+        // přiřazené auto k Request
         public int? CarId { get; set; } = null;
 
-        //  Request values:
-        [Required(ErrorMessage = "Je nutné vybrat jednu z možností")]
-        public string PrefferedContactWay { get; set; } = "";
+        [Required (ErrorMessage = "Je nutné si zvolit auto, které si chcete půjčit")]
+        [Display (Name = "Auto")]
+        public string CarName { get; set; }
         
-        // Dobrovolné vyplnění
-        [StringLength(500, ErrorMessage = "Zpráva nesmí být delší než 500 znaků")]
-        public string Note { get; set; } = "";
-
-        [Required(ErrorMessage = "Je nutné zvolit předpokládaný datum vypůjčení auta")]
-        [DataType(DataType.Date)]       // pouze datum nikoliv čas
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime StartDay { get; set; }
-
-        [Required(ErrorMessage = "Je nutné vybrat počet dnů")]
-        [Range(1, 31, ErrorMessage = "Vyberte počet dnů v rozmezí 1-31")]
-        public int RentDays { get; set; }
-
         // Client values:
         [Required(ErrorMessage = "Jméno je povinný údaj")]
         [StringLength(100)]
+        [RegularExpression(@"^[^0-9]*$", ErrorMessage = "Jméno nesmí obsahovat číslice.")]
+        [Display(Name = "Jméno")]
         public string Name { get; set; } = "";
 
         [Required(ErrorMessage = "Příjmení je povinný údaj")]
         [StringLength(100, ErrorMessage = "Rodné příjmení je dostačující")]
+        [RegularExpression(@"^[^0-9]*$", ErrorMessage = "Příjmení nesmí obsahovat číslice.")]
+        [Display(Name = "Příjmení")]
         public string Surname { get; set; } = "";
 
         [Required(ErrorMessage = "Je nutné zvolit předvolbu")]
+        [Display (Name = "Telefonní číslo")]
         public int PhonePreset { get; set; }
 
         [Required(ErrorMessage = "Je nutné vyplnit telefonní číslo")]
@@ -45,8 +36,32 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         [StringLength(20)]      // omezení číslic
         public string PhoneNumber { get; set; } = "";
 
-        [Required(ErrorMessage = "Email je povinný údaj")]
-        [EmailAddress(ErrorMessage = "Zadaná adresa není platná")]
+        [Required(ErrorMessage = "E-mail je povinný údaj")]
+        [EmailAddress(ErrorMessage = "Zadaná emailová adresa není platná")]
+        [StringLength(100)]
+        [Display (Name = "E-mail")]
         public string Email { get; set; } = "";
+
+        //  Request values:
+        [Required(ErrorMessage = "Je nutné vybrat jednu z možností")]
+        [Display(Name = "Preferovaná forma komunikace")]
+        public string PrefferedContactWay { get; set; } = "";
+        
+        // Dobrovolné vyplnění
+        [StringLength(500, ErrorMessage = "Zpráva nesmí být delší než 500 znaků")]
+        [Display (Name = "Doplňující informace")]
+        public string Note { get; set; } = "";
+
+        [Required(ErrorMessage = "Je nutné zvolit předpokládaný datum vypůjčení auta")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [Display (Name = "Od")]
+        public DateTime StartDay { get; set; } = DateTime.Today;
+
+        [Required(ErrorMessage = "Je nutné zvolit předpokládaný datum návratu auta")]
+        [DataType(DataType.Date)]       
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Do")]
+        public DateTime EndDay { get; set; } = DateTime.Today;
     }
 }

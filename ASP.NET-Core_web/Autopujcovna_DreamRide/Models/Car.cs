@@ -19,13 +19,14 @@ namespace Autopujcovna_DreamRide.Models
         public string Model { get; set; } = "";
         
         [Required(ErrorMessage = "Rok výroby musí být vyplněn")]
-        [Range(1900, 3000, ErrorMessage = "Rok výroby musí být větší než 1899")]
+        [Range(1900, 9999, ErrorMessage = "Rok výroby musí být větší než 1899")]
         [Display(Name = "Rok výroby")]
         public int YearOfManufacture { get; set; }
 
         [StringLength(25)]
         [Required(ErrorMessage = "Volba typu auta je povinná")]
         [Display(Name = "Typ karosérie")]
+        [RegularExpression(@"^[^0-9]*$", ErrorMessage = "The field cannot contain numbers.")]
         public string Body { get; set; } = "";     // e.g. Sedan, Coupé, Limusine, Crossover, Hatchback, Cabriolet,
 
         [StringLength(25)]

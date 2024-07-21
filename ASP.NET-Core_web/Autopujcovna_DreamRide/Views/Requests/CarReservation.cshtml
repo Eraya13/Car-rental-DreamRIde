@@ -4,107 +4,130 @@
     ViewData["Title"] = "Rezervace auta";
 }
 
-<article class="a-left bg-content article-spacing container-flex-row">
-    <section class="form-spacing bg-grey container article-member">
-        <form class="label-names">
-            <h1 class="form-title">Návrh na rezervaci auta</h1>
-            <!-- Name + surname -->
+<article class="container-flex-row">
+    <section class="form-spacing bg-grey article-member">
+        <form asp-action="Create" class="label-names">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            @* Název formuláře *@
+            @*             Je potřeba ještě udělat obrys písma a zlepšit obecně vzhled textu vlevo *@
+             <h1 class="form-title text-red">Návrh na rezervaci auta</h1>
+            
+            @*  Jméno + příjmení *@
             <div class="row">
-                <div class="col-6 px-4 my-3">
-                    <label for="name">Jméno</label>
-                    <input type="email" class="form-control" id="name" aria-describedby="popisEmailu" placeholder="Vaše jméno">
+                <div class="col-6 px-4 my-2">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Vaše jméno" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                <div class="col-6 px-4 my-3">
-                    <label for="surname">Přijmení</label>
-                    <input type="text" class="form-control" id="surname" placeholder="Vaše příjmení">
+                <div class="col-6 px-4 my-2">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" placeholder="Vaše příjmení" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
             </div>
-            <!-- Predvolba + tel. number + email-->
+
+            @* Předvolba + tel. číslo + e-mail *@
             <div class="row">
-                <label for="telefon" class="px-4 mt-3">Telefonní číslo</label>
-                <div class="col-5 px-4 mt-1 my-3">
-                    <select class="form-select" id="predvolba">
-                        <option selected value="cz">+420</option>
-                        <option value="sk">+421</option>
+                <label asp-for="PhonePreset" class="px-4 mt-3 control-label"></label>
+                <div class="col-5 px-4 mt-1 my-2">
+                    <select asp-for="PhonePreset" class="form-select">
+                        <option selected value="420">+420</option>
+                        <option value="421">+421</option>
+                        <option value="43">+43</option>
+                        <option value="49">+49</option>
                     </select>
+                    <span asp-validation-for="PhonePreset" class="text-danger"></span>
                 </div>
-                <div class="col-7 mt-1 my-3">
-                    <input type="tel" class="form-control" id="telefon" placeholder="722 182 777">
-                </div>
-            </div>
-            <div class="row">
-                <!-- Email -->
-                <div class="col-12 px-4 my-3">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="popisEmailu" placeholder="Ve tvaru: franta@gmail.com">
+                <div class="col-7 mt-1 my-2">
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="722 182 777" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
             </div>
-
+               @*  E-mail *@
             <div class="row">
-                <!-- na label dáme vždy tuto classu!! -->
-                <label class="px-4 mt-3">Chci být kontaktován:</label>
-                <div class="col-12 my-1">
-                    <label class="form-check-label">
-                        <input class="form-check-input mx-5" type="radio" name="contact-way" id="contact-way" value="telephone" checked>
-                        telefonicky
-                    </label>
-                </div>
-                <div class="col-12 my-1">
-                    <label class="form-check-label">
-                        <input class="form-check-input mx-5" type="radio" name="contact-way" id="contact-way" value="email" checked>
-                        emailem
-                    </label>
+                <div class="col-12 px-4 my-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Ve tvaru: franta@gmail.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
             </div>
 
+               @*  Preferovaná forma komunikace *@
             <div class="row">
-                <div class="col-12 px-4 my-3">
-                    <label for="car">Auto</label>
+                <label asp-for="PrefferedContactWay" class="px-4 mt-3"></label>
+                <div class="col-12 my-1">
+                    <label class="form-check-label control-label">
+                        <input asp-for="PrefferedContactWay" class="form-check-input mx-5" type="radio" value="telefon" checked />telefon
+                    </label>
+                </div>
+                <div class="col-12 my-1">
+                    <label class="form-check-label control-label">
+                        <input asp-for="PrefferedContactWay" class="form-check-input mx-5" type="radio" value="email" checked />email
+                    </label>
+                </div>
+                <span asp-validation-for="PrefferedContactWay" class="text-danger"></span>
+            </div>
+
+            @* Výběr auta - toto se musí předělat! *@
+            <div class="row">
+                <div class="col-12 px-4 my-2">
+                    <label asp-for="CarName" for="car">Auto</label>
                     <select class="form-select" id="car">
-                        <option selected value="1">Audi TT TSFI 2.0 2012</option>
-                        <option value="2">BMW 3 Series 320i 2019</option>
+                        <option asp-for="CarId" selected value="1">Audi TT TSFI 2.0 2012</option>
+                        <option value="2">BMW 3 Series 320i 2019</option>       @* Zde bude později HTML.Display z property Car *@
                         <option value="3">Mercedes-Benz S-Class 350 2018</option>
                     </select>
-                </div>
-            </div>
-            <!-- datum od / do -->
-            <div class="row">
-                <div class="col-6 ps-4 my-3">
-                    <label for="datePicker">Od</label>
-                    <input type="date" class="form-control" id="datePicker">
-                </div>
-                <div class="col-6 pe-4 my-3">
-                    <label for="datePicker">Do</label>
-                    <input type="date" class="form-control" id="datePicker">
+                    <span asp-validation-for="CarId" class="text-danger"></span>
                 </div>
             </div>
 
+            @* Datum Od / Do *@
             <div class="row">
-                <div class="col-12 px-4 my-3">
-                    <label>Doplňující informace</label>
-                    <textarea class="form-control border-0" id="additionalInfo" rows="4" placeholder="Napiště sem, co bychom ještě měli vědět, případně zanechte pole prázdné..."></textarea>
+                <div class="col-6 ps-4 my-2">
+                    @* label for="datePicker"*@
+                    <label asp-for="StartDay"></label>
+                    <input asp-for="StartDay" class="form-control" />
+                    <span asp-validation-for="StartDay" class="text-danger"></span>
+                </div>
+                <div class="col-6 pe-4 my-3">
+                    <label asp-for="EndDay"></label>
+                    <input asp-for="EndDay" class="form-control" />
+                    <span asp-validation-for="EndDay" class="text-danger"></span>
                 </div>
             </div>
-            <div class="text-end my-3">
-                <label for="submit-button"></label>
+
+            @* Doplňující informace *@
+            <div class="row">
+                <div class="col-12 px-4 my-2">
+                    <label asp-for="Note" class="control-label"></label>
+                    <textarea asp-for="Note" class="form-control border-0" rows="4" placeholder="Napiště sem, co bychom ještě měli vědět, případně zanechte pole prázdné..."></textarea>
+                    <span asp-validation-for="Note" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="d-flex car-btn-submit-pos">
                 <button type="submit" class="btn section-btn">Odeslat návrh</button>
             </div>
         </form>
     </section>
-    <section class="form-spacing article-member">
+
+    @*  Sekce přímého kontaktování autopůjčovny - alternativa k formuláři  *@
+     <section class="form-spacing article-member">
         <h1 class="section-h1">... Nebo nám přímo zavolejte</h1>
         <h2 class="section-h2">Filip Steinmetz</h2>
-        <!-- Mobile + Email -->
+        
+        @* Mobil + E-mail *@
         <section class="txt-content">
             <p><strong>Mobil:</strong> +420 725 475 558</p>
             <p><strong>E-mail:</strong> info@dreamride.cz</p>
             <p class="my-5">Jsme tady hlavně pro Vás nebojte se nás na cokoliv zeptat!</p>
             <p></p>
-            <!-- Social sites -->
-            <h2 class="section-h2">Sociální sítě</h2>
 
+            @* Sociální sítě *@
+            <h2 class="section-h2">Sociální sítě</h2>
             <!-- vynechat trošku víc místa a najít Icony na FB a Instagram -->
-            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            @* Ikony s proklikem na FB či Instagram stránku autopůjčovny (čistě virtuální - nikam člověka neodešle) *@
+            <button><img src="images/facebook.png" alt="Facebook"></button>
+            <button><img src="images/instagram.png" alt="Instagram"></button>
         </section>
 </article>
