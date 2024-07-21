@@ -3,7 +3,7 @@
 
 namespace Autopujcovna_DreamRide.Models.ViewModels
 {
-    // třída, která slouží k tomu, aby pomohla s vytvořením žádosti, vytvořením klienta a přiřazení k žádosti příslušné auto dle volby klienta
+    // Třída, která slouží k tomu, aby pomohla s vytvořením žádosti, vytvořením klienta a přiřazení k žádosti příslušné auto dle volby klienta
     public class RequestViewModel
     {
 
@@ -50,7 +50,7 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         // Dobrovolné vyplnění
         [StringLength(500, ErrorMessage = "Zpráva nesmí být delší než 500 znaků")]
         [Display (Name = "Doplňující informace")]
-        public string Note { get; set; } = "";
+        public string AdditionalInfo { get; set; } = "";
 
         [Required(ErrorMessage = "Je nutné zvolit předpokládaný datum vypůjčení auta")]
         [DataType(DataType.Date)]
