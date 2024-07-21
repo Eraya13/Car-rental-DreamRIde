@@ -104,6 +104,23 @@
                 </div>
             </div>
         </div>
+        <h2 class="my-3 mt-5">Cesta k titulní fotce auta</h2>
+        <div class="row txt-m">
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="Transmission" class="control-label"></label>
+                    <input asp-for="Transmission" class="form-control" />
+                    <span asp-validation-for="Transmission" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 px-4">
+                <div class="form-group">
+                    <label asp-for="DriveTrain" class="control-label"></label>
+                    <input asp-for="DriveTrain" class="form-control" />
+                    <span asp-validation-for="DriveTrain" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
         <div class="d-flex car-btn-submit-pos">
             <button type="submit" class="btn section-btn">Přidat auto</button>
         </div>
