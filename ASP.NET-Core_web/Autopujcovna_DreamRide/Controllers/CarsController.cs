@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Autopujcovna_DreamRide.Data;
 using Autopujcovna_DreamRide.Models;
@@ -9,6 +10,7 @@ using Autopujcovna_DreamRide.Models.ViewModels;
 
 namespace Autopujcovna_DreamRide.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class CarsController : Controller
     {
         private readonly AppDbContext _context;
@@ -19,6 +21,7 @@ namespace Autopujcovna_DreamRide.Controllers
         }
 
         // GET: Cars
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var cars = await _context.Cars.ToListAsync(); // získání všech záznamů (aut) z tabulky Cars
@@ -44,6 +47,7 @@ namespace Autopujcovna_DreamRide.Controllers
         }
 
         // GET: Cars/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

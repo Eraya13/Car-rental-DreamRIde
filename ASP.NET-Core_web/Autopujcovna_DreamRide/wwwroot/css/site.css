@@ -449,7 +449,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    margin-bottom: 3rem;
 }
 
 /*Pořadí pro tlačítka vedle sebe*/
@@ -636,7 +636,7 @@ footer {
     font-weight: 500;
     font-size: 1.9rem;
     padding: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     background-color: grey;
     color: white;
 }
