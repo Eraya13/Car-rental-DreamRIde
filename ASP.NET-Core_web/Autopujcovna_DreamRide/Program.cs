@@ -53,18 +53,30 @@ namespace Autopujcovna_DreamRide
             string? adminUsername = builder.Configuration.GetSection("AllowedUsernames")["Admin"];
             string? managerUsername = builder.Configuration.GetSection("AllowedUsernames")["Manager"];
 
-            /* Debugging print uživatelských jmen pro kontrolu
+
+            /// <summary>
+            /// Pokud jsou adminUsername a managerUsername nenulové, přidá povolená uživatelská jména do služeb pro Dependency Injection.
+            /// </summary>
+            /// <param name="builder">WebApplicationBuilder použitý ke konfiguraci služeb.</param>
+            /// <param name="adminUsername">Uživatelské jméno administrátora načtené z konfigurace.</param>
+            /// <param name="managerUsername">Uživatelské jméno manažera načtené z konfigurace.</param>
+            /// <remarks>
+            /// Tento kód zajišťuje, že pokud jsou povolená uživatelská jména pro administrátora a manažera správně načtena z konfigurace,
+            /// budou tato uživatelská jména přidána do kolekce služeb jako singletony.
+            /// </remarks>
             if (adminUsername != null && managerUsername != null)
             {
-                Console.WriteLine($"Admin username: {adminUsername}");
-                Console.WriteLine($"Manager username: {managerUsername}");
+                // Debugging print uživatelských jmen pro kontrolu
+                // Console.WriteLine($"Admin username: {adminUsername}");
+                // Console.WriteLine($"Manager username: {managerUsername}");
+                
                 // Přidání povolených uživatelských jmen do služeb pro Dependency Injection
                 builder.Services.AddSingleton(provider => new AllowedUsernames
                 {
                     AdminUsername = adminUsername,
                     ManagerUsername = managerUsername
                 });
-            }*/
+            }
 
             /// <summary>
             /// Postavení aplikace pomocí builderu.
