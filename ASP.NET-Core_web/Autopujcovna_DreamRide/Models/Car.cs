@@ -18,7 +18,7 @@ namespace Autopujcovna_DreamRide.Models
         /// <summary>
         /// Značka auta
         /// </summary>
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "Značka auta musí být zapsána pomocí zkratek např. BMW")]   // značka mezi 50 a 2 znaky
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "Značka auta musí být zapsána pomocí zkratek např. BMW")]
         [Required(ErrorMessage = "Značka auta musí být vyplněna")]
         [Display (Name = "Značka")]
         public string Label { get; set; } = "";
@@ -29,15 +29,6 @@ namespace Autopujcovna_DreamRide.Models
         [StringLength(20)]
         [Required(ErrorMessage = "Model auta musí být vyplněn")]
         public string Model { get; set; } = "";
-
-
-        /// <summary>
-        /// Maximální výrobcem daná rychlost km/h
-        /// </summary>
-        [Range(1, 500, ErrorMessage = "Maximální rychlost musí být v rozsahu 1 - 700")]
-        [Required(ErrorMessage = "Maximální rychlost musí být vyplněna")]
-        [Display(Name = "Max rychlost (km/h)")]
-        public int TopSpeedKmForHour { get; set; }
 
         /// <summary>
         /// Rok výroby auta
@@ -53,8 +44,8 @@ namespace Autopujcovna_DreamRide.Models
         [StringLength(25)]
         [Required(ErrorMessage = "Volba typu karosérie je povinná")]
         [Display(Name = "Karosérie")]
-        [RegularExpression(@"^[^0-9]*$", ErrorMessage = "The field cannot contain numbers.")]
-        public string Body { get; set; } = "";     // např. Sedan, Kupé, Hatchback, Kabriolet
+        [RegularExpression(@"^[^0-9]*$", ErrorMessage = "The field cannot contain numbers.")]   // // kontroluje přítomnost čísel - zde čísla nesmí být přítomna
+        public string Body { get; set; } = "";
 
         /// <summary>
         /// Palivo, na které jezdí auto
@@ -63,6 +54,14 @@ namespace Autopujcovna_DreamRide.Models
         [Required(ErrorMessage = "Volba typu paliva je povinná")]
         [Display(Name = "Palivo")]
         public string Fuel { get; set; } = "";
+
+        /// <summary>
+        /// Maximální výrobcem daná rychlost km/h
+        /// </summary>
+        [Range(1, 500, ErrorMessage = "Maximální rychlost musí být v rozsahu 1 - 700")]
+        [Required(ErrorMessage = "Maximální rychlost musí být vyplněna")]
+        [Display(Name = "Max rychlost (km/h)")]
+        public int TopSpeedKmForHour { get; set; }
 
         /* Specifikace motoru */
 
@@ -92,20 +91,19 @@ namespace Autopujcovna_DreamRide.Models
         /* Další technické údaje */
 
         /// <summary>
-        /// Převodovka
-        /// </summary>
-        [Required(ErrorMessage = "Volba typu převodovky je povinná")]
-        [Display(Name = "Převodovka")]
-        public string Transmission { get; set; } = "";
-
-        
-        /// <summary>
         /// Pohon nápravy auta
         /// </summary>
         [StringLength(5)]
         [Required(ErrorMessage = "Volba typu pohonu je povinná")]
         [Display(Name = "Pohon")]
         public string DriveTrain { get; set; } = "";
+        
+        /// <summary>
+        /// Převodovka
+        /// </summary>
+        [Required(ErrorMessage = "Volba typu převodovky je povinná")]
+        [Display(Name = "Převodovka")]
+        public string Transmission { get; set; } = "";
 
         /*Komentář k řešení uložení názvu fotky a samotnému nahrávní do vymezené složky: Je mi zcela jasné, že to není ideální řešení - plánuji tuto funkcionalitu později vyřešit -
         z časových důvodů je zobrazení titulní fotky pro konkrétní auto řešeno touto zjednodušenou "polodynamickou cestou" */
@@ -113,12 +111,11 @@ namespace Autopujcovna_DreamRide.Models
         /// <summary>
         /// Proměnná uchovávající relativní cestu složky, kde jsou uloženy či kam se mají uložit všechny titulní fotky jednotlivých aut
         /// </summary>
-        
         [StringLength(100)]
         public const string ImageCarFolder = "~/images/Cars/";
 
         /// <summary>
-        /// Název titulní fotky, která náleží ke konkrétnímu vozidlu - všechna vozidla fotek se nachází v jedné složce - cesta k ní je zahrnuta v <param name="ImageCarFolder">
+        /// Název titulní fotky, která náleží ke konkrétnímu autu  - všechna fotky aut se nachází v jedné složce - cesta k ní je zahrnuta v <param name="ImageCarFolder">
         /// </summary>
         [StringLength(100)]
         [RegularExpression(@".*\..*", ErrorMessage = "Název titulní fotky musí obsahovat příponu souboru - např obr.jpg")]

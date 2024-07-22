@@ -34,7 +34,8 @@ namespace Autopujcovna_DreamRide.Controllers
                         car.EngineDisplacement,
                         car.PowerInKw,
                         car.Transmission,
-                        car.DriveTrain
+                        car.DriveTrain,
+                        car.TitleCarImage
                     );
 
                 briefCarViewModels.Add(briefCarViewModel);
@@ -58,7 +59,7 @@ namespace Autopujcovna_DreamRide.Controllers
             }
 
             var CarDetail = new CarDetailViewModel(car.Id, car.Label, car.Model, car.TopSpeedKmForHour, car.PowerInKw,
-                        car.Transmission, car.YearOfManufacture, car.EngineDisplacement, car.EngineType, car.DriveTrain, car.Fuel, car.Body);
+                        car.Transmission, car.YearOfManufacture, car.EngineDisplacement, car.EngineType, car.DriveTrain, car.Fuel, car.Body, car.TitleCarImage);
 
             return View(CarDetail);
         }
@@ -150,7 +151,7 @@ namespace Autopujcovna_DreamRide.Controllers
             }
 
             var briefCarInfo = new BriefCarViewModel (car.Id, car.Label, car.Model, car.EngineType,
-                        car.EngineDisplacement, car.PowerInKw, car.Transmission, car.DriveTrain);
+                        car.EngineDisplacement, car.PowerInKw, car.Transmission, car.DriveTrain, car.TitleCarImage);
 
             return View(briefCarInfo);
         }

@@ -13,7 +13,7 @@
         {
                 <div class="outer-card">
                     <section class="car-card">
-                    <a asp-action="Details" asp-route-id="@Model[i].Id" class="no-style-link">
+                    <a asp-action="Details" asp-route-id="@Model[i].CarId" class="no-style-link">
                         <div class="img-wrapper">
                             <img class="img-car-in-card" src="~/images/Subaru_BRZ.jpg" alt="Audi TT">
                         </div>
@@ -38,8 +38,8 @@
                         </ul>      
                     </a>
                 <div class="btns-admin">
-                    <a asp-action="Edit" asp-route-id="@Model[i].Id" class="btn btn-edit">Upravit</a>
-                    <a asp-action="Delete" asp-route-id="@Model[i].Id" class="btn section-btn btn-delete">Odstranit</a>
+                    <a asp-action="Edit" asp-route-id="@Model[i].CarId" class="btn btn-edit">Upravit</a>
+                    <a asp-action="Delete" asp-route-id="@Model[i].CarId" class="btn section-btn btn-delete">Odstranit</a>
                 </div>
                 </section>
             </div>
