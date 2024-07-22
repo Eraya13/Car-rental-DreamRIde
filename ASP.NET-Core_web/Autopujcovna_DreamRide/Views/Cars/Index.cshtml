@@ -21,7 +21,7 @@
             <section class="car-card">
             <a asp-action="Details" asp-route-id="@Model[i].CarId" class="no-style-link">
             <div class="img-wrapper">
-                <img class="img-car-in-card" src="~/images/Subaru_BRZ.jpg" alt="Audi TT">
+                            <img class="img-car-in-card" src="@Url.Content(Model[i].ImageFullPath)" alt="Title car photol">
             </div>
             <h2>@Html.DisplayFor(model => model[i].Title)</h2>
             <ul class="car-attributes">

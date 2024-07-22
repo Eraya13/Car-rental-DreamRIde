@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.DependencyInjection;  // Pro použití metody GetRequiredService
 using Autopujcovna_DreamRide.Models;
 
 namespace Autopujcovna_DreamRide.Controllers
@@ -144,7 +142,7 @@ namespace Autopujcovna_DreamRide.Controllers
 
                 // Kontrola, zda bylo přihlášení úspěšné
                 if (result.Succeeded)
-                    return RedirectHome();      // Přesměrování na domovskou stránku (Admin: Cars -> index)
+                    return RedirectHome();      // Přesměrování na domovskou stránku (Admin: CarsController -> Index)
 
                 // Přidání chybové zprávy do ModelState, pokud přihlášení nebylo úspěšné
                 ModelState.AddModelError("Login error", "Neplatné přihlašovací údaje.");
@@ -163,7 +161,7 @@ namespace Autopujcovna_DreamRide.Controllers
         {
             // Odhlášení uživatele pomocí SignInManager
             await signInManager.SignOutAsync();
-            return RedirectToLocal(null);       // návrat na índex HomeControlleru (domovskou stránku)
+            return RedirectToLocal(null);       // Přesměrování na úvodní stránku webové stránky -> HomeController -> Index
         }
 
         /// <summary>

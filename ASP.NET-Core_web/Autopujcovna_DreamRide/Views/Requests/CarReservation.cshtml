@@ -6,7 +6,7 @@
 
 <article class="container-flex-row">
     <section class="form-spacing bg-grey article-member">
-        <form asp-action="Create" class="label-names">
+        <form asp-action="CarReservation" class="label-names">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
             @* Název formuláře *@
@@ -130,7 +130,7 @@
             <h2 class="section-h2">Sociální sítě</h2>
             <!-- vynechat trošku víc místa a najít Icony na FB a Instagram -->
             @* Ikony s proklikem na FB či Instagram stránku autopůjčovny (čistě virtuální - nikam člověka neodešle) *@
-            <button><img src="images/facebook.png" alt="Facebook"></button>
-            <button><img src="images/instagram.png" alt="Instagram"></button>
+            <button><img class="img-icon" src="~/images/icons/FB.png" alt="Facebook"></button>
+            <button><img class="img-icon" src="~/images/icons/instagram.png" alt="Instagram"></button>
         </section>
 </article>

@@ -112,7 +112,7 @@ namespace Autopujcovna_DreamRide.Models
         /// Proměnná uchovávající relativní cestu složky, kde jsou uloženy či kam se mají uložit všechny titulní fotky jednotlivých aut
         /// </summary>
         [StringLength(100)]
-        public const string ImageCarFolder = "~/images/Cars/";
+        public const string ImageCarFolder = "~/images/cars/";
 
         /// <summary>
         /// Název titulní fotky, která náleží ke konkrétnímu autu  - všechna fotky aut se nachází v jedné složce - cesta k ní je zahrnuta v <param name="ImageCarFolder">
