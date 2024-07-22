@@ -42,14 +42,32 @@
             <div class="col-3 px-4">
                 <div class="form-group">
                     <label asp-for="Body" class="control-label"></label>
-                    <input asp-for="Body" class="form-control" />
+                    <select asp-for="Body" class="form-select">
+                        <option selected value="Kupé">Kupé</option>
+                        <option value="Sedan"></option>
+                        <option value="Kabriolet">Kabriolet</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Gran Turismo (GT)">Gran Turismo (GT)</option>
+                    </select>
                     <span asp-validation-for="Body" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-3 px-4">
                 <div class="form-group">
                     <label asp-for="Fuel" class="control-label"></label>
-                    <input asp-for="Fuel" class="form-control" />
+                    <select asp-for="Fuel" class="form-select">
+                        <option selected value="Benzín">Benzín</option>
+                        <option value="Nafta">Nafta</option>
+                        <option value="Elektřina">Elektřina</option>
+                        <option value="Vodík">Vodík (Hydrogen)</option>
+                        <option value="Hybridní - benzín + elektřina">Hybridní - benzín + elektřina</option>
+                        <option value="Hybridní - nafta + elektřina">Hybridní - nafta + elektřina</option>
+                        <option value="Ethanol">Ethanol (E85)</option>
+                        <option value="LPG + benzín">Zkaplněný ropný plyn (LPG) + benzín</option>
+                        <option value="LPG + nafta">Zkaplněný ropný plyn (LPG) + nafta</option>
+                        <option value="CNG + benzín">Stlačený zemní plyn(CNG) + benzín</option>
+                        <option value="CNG + nafta">Stlačený zemní plyn(CNG) + nafta</option>
+                    </select>
                     <span asp-validation-for="Fuel" class="text-danger"></span>
                 </div>
             </div>
@@ -91,16 +109,25 @@
         <div class="row txt-m">
             <div class="col-3 px-4">
                 <div class="form-group">
-                    <label asp-for="Transmission" class="control-label"></label>
-                    <input asp-for="Transmission" class="form-control" />
-                    <span asp-validation-for="Transmission" class="text-danger"></span>
+                    <label asp-for="DriveTrain" class="control-label"></label>
+                    <select asp-for="DriveTrain" class="form-select">
+                        <option selected value="RWD">RWD (pohon zadní nápravy)</option>
+                        <option value="FWD">FWD (pohon přední nápravy)</option>
+                        <option value="4x4">4x4 (pohon na obě nápravy)</option>
+                        <option value="AWD">AWD (stálý pohon zadní i přední nápravy)</option>
+                    </select>
+                    <span asp-validation-for="DriveTrain" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-3 px-4">
                 <div class="form-group">
-                    <label asp-for="DriveTrain" class="control-label"></label>
-                    <input asp-for="DriveTrain" class="form-control" />
-                    <span asp-validation-for="DriveTrain" class="text-danger"></span>
+                    <label asp-for="Transmission" class="control-label"></label>
+                    <select asp-for="Transmission" class="form-select">
+                        <option selected value="Manuální">Manuální</option>
+                        <option value="Automatická">Automatická</option>
+                        <option value="Poloautomatická">Poloautomatická (AMT)</option>
+                    </select>
+                    <span asp-validation-for="Transmission" class="text-danger"></span>
                 </div>
             </div>
         </div>
@@ -108,16 +135,9 @@
         <div class="row txt-m">
             <div class="col-3 px-4">
                 <div class="form-group">
-                    <label asp-for="Transmission" class="control-label"></label>
-                    <input asp-for="Transmission" class="form-control" />
-                    <span asp-validation-for="Transmission" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="col-3 px-4">
-                <div class="form-group">
-                    <label asp-for="DriveTrain" class="control-label"></label>
-                    <input asp-for="DriveTrain" class="form-control" />
-                    <span asp-validation-for="DriveTrain" class="text-danger"></span>
+                    <label asp-for="TitleCarImage" class="control-label"></label>
+                    <input asp-for="TitleCarImage" class="form-control" />
+                    <span asp-validation-for="TitleCarImage" class="text-danger"></span>
                 </div>
             </div>
         </div>

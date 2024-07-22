@@ -56,14 +56,16 @@
                @*  Preferovaná forma komunikace *@
             <div class="row">
                 <label asp-for="PrefferedContactWay" class="px-4 mt-3"></label>
-                <div class="col-12 my-1">
+                <div class="col-6">
                     <label class="form-check-label control-label">
-                        <input asp-for="PrefferedContactWay" class="form-check-input mx-5" type="radio" value="telefon" checked />telefon
+                        <input asp-for="PrefferedContactWay" class="form-check-input mx-4 txt-l" type="radio" value="telefon" checked />
+                        <span class="txt-l">telefon</span>
                     </label>
                 </div>
-                <div class="col-12 my-1">
+                <div class="col-6">
                     <label class="form-check-label control-label">
-                        <input asp-for="PrefferedContactWay" class="form-check-input mx-5" type="radio" value="email" checked />email
+                        <input asp-for="PrefferedContactWay" class="form-check-input mx-4 txt-l" type="radio" value="email" checked />
+                        <span class="txt-l">email</span>
                     </label>
                 </div>
                 <span asp-validation-for="PrefferedContactWay" class="text-danger"></span>
@@ -72,9 +74,9 @@
             @* Výběr auta - toto se musí předělat! *@
             <div class="row">
                 <div class="col-12 px-4 my-2">
-                    <label asp-for="CarName" for="car">Auto</label>
+                    <label asp-for="CarName" for="cars">Auto</label>
                     <select class="form-select" id="car">
-                        <option asp-for="CarId" selected value="1">Audi TT TSFI 2.0 2012</option>
+                        <option asp-for="CarName" selected value="1">Audi TT TSFI 2.0 2012</option>
                         <option value="2">BMW 3 Series 320i 2019</option>       @* Zde bude později HTML.Display z property Car *@
                         <option value="3">Mercedes-Benz S-Class 350 2018</option>
                     </select>
@@ -90,7 +92,7 @@
                     <input asp-for="StartDay" class="form-control" />
                     <span asp-validation-for="StartDay" class="text-danger"></span>
                 </div>
-                <div class="col-6 pe-4 my-3">
+                <div class="col-6 pe-4 my-2">
                     <label asp-for="EndDay"></label>
                     <input asp-for="EndDay" class="form-control" />
                     <span asp-validation-for="EndDay" class="text-danger"></span>
@@ -118,10 +120,11 @@
         
         @* Mobil + E-mail *@
         <section class="txt-content">
-            <p><strong>Mobil:</strong> +420 725 475 558</p>
-            <p><strong>E-mail:</strong> info@dreamride.cz</p>
-            <p class="my-5">Jsme tady hlavně pro Vás nebojte se nás na cokoliv zeptat!</p>
-            <p></p>
+            <div class="txt-l">
+                <p><strong>Mobil:</strong> +420 725 475 558</p>
+                <p><strong>E-mail:</strong> info@dreamride.cz</p>
+                <p class="my-5">Jsme tady hlavně pro Vás nebojte se nás na cokoliv zeptat!</p>
+            </div>
 
             @* Sociální sítě *@
             <h2 class="section-h2">Sociální sítě</h2>
