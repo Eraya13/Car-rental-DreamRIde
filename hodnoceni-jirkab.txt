@@ -1,0 +1,13 @@
+Ceníme práci na projektu! 🏆 Prohlédli jsme si kód a máme k němu následující poznámky:
+
+1. Pojmenování identifikátorů - u anglických identifikátorů pozor jak na pořadí slov, tak na jednotné/množné číslo. Např. bývá zvykem pojmenovávat kontrolery, manažery, služby a další dle ENTITY, s kterou pracují (nikoli dle seznamu) - tedy CarController, ClientController, RequestController stejně jako je HomeController či AccountController
+2. Dodržení principů SRP a SoC - ještě jednou ke kontrolerům - jde o třídu, jejíž zodpovědností je komunikace s uživatelem, je to součást MVC a návrhový vzor. Nemá tedy obsahovat žádnou logiku, práci s daty apod., to je zodpovědnost (M)odelu. Kontroler nemá vědět, jak a kam data ukládat nebo na jaké chyby reagovat, to patří jinam.
+3. Vhodný výběr datových typů - může být, i když *vlastní* datové typy by poskytly větší kontrolu - např. u značek aut (výčtový typ), typy pohonu, paliva, karosérie (opět výčty), a navíc to umožní komfortnější obsluhu a sníží chybovost
+4. Formátování kódu - ok
+5. Duplicitní kód a nekonečné cykly - ok, dané frameworkem
+6. Validace vstupních dat - ok
+7. Logičnost a složitost - bez výhrad
+8. Komentáře - ok včetně dokumentačních
+9. Celkové hodnocení - poměrně rozsáhlá .NET aplikace (na úvodní kurz), hlavní neduh vidím v neujasněných zodpovědnostech MVC tříd.
+
+Doporučujeme případné výtky v kódu opravit, abyste jej mohli pak prezentovat budoucímu zaměstnavateli v co nejlepší kvalitě. Pokud byste potřebovali s čímkoli pomoci, naplánujte si s námi konzultaci, rádi vám poradíme!
