@@ -11,7 +11,7 @@
             
             @* Název formuláře *@
             @*             Je potřeba ještě udělat obrys písma a zlepšit obecně vzhled textu vlevo *@
-             <h1 class="form-title text-red">Návrh na rezervaci auta</h1>
+             <h1 class="form-title text-red basic-shadow">Návrh na rezervaci auta</h1>
             
             @*  Jméno + příjmení *@
             <div class="row">
@@ -107,7 +107,7 @@
                     <span asp-validation-for="AdditionalInfo" class="text-danger"></span>
                 </div>
             </div>
-            <div class="d-flex car-btn-submit-pos">
+            <div class="d-flex car-btn-submit-pos mt-2">
                 <button type="submit" class="btn section-btn">Odeslat návrh</button>
             </div>
         </form>
@@ -125,12 +125,12 @@
                 <p><strong>E-mail:</strong> info@dreamride.cz</p>
                 <p class="my-5">Jsme tady hlavně pro Vás nebojte se nás na cokoliv zeptat!</p>
             </div>
-
-            @* Sociální sítě *@
+        </section>
+        @* Sociální sítě *@
+        <section>
             <h2 class="section-h2">Sociální sítě</h2>
-            <!-- vynechat trošku víc místa a najít Icony na FB a Instagram -->
             @* Ikony s proklikem na FB či Instagram stránku autopůjčovny (čistě virtuální - nikam člověka neodešle) *@
-            <button><img class="img-icon" src="~/images/icons/FB.png" alt="Facebook"></button>
-            <button><img class="img-icon" src="~/images/icons/instagram.png" alt="Instagram"></button>
+            <a href="https://www.facebook.com/"> <img class="img-icon" src="~/images/icons/Facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com"> <img class="img-icon" src="~/images/icons/instagram.png" alt="Instagram"></a>
         </section>
 </article>
