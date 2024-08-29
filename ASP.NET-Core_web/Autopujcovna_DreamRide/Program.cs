@@ -67,8 +67,8 @@ namespace Autopujcovna_DreamRide
             if (adminUsername != null && managerUsername != null)
             {
                 // Debugging print uživatelských jmen pro kontrolu
-                // Console.WriteLine($"Admin username: {adminUsername}");
-                // Console.WriteLine($"Manager username: {managerUsername}");
+                 Console.WriteLine($"Admin username: {adminUsername}");
+                 Console.WriteLine($"Manager username: {managerUsername}");
                 
                 // Přidání povolených uživatelských jmen do služeb pro Dependency Injection
                 builder.Services.AddSingleton(provider => new AllowedUsernames
@@ -115,8 +115,8 @@ namespace Autopujcovna_DreamRide
                 UserManager<IdentityUser> userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
                 // Vytvoření rolí, pokud neexistují
-                await EnsureRoleExists(roleManager, UserRoles.Admin);
-                await EnsureRoleExists(roleManager, UserRoles.RequestManager);
+                //await EnsureRoleExists(roleManager, UserRoles.Admin);
+                //await EnsureRoleExists(roleManager, UserRoles.RequestManager);
             }
 
             app.Run();      // spuštění aplikace
@@ -129,10 +129,11 @@ namespace Autopujcovna_DreamRide
         /// <param name="roleName">Název role, kterou je třeba zajistit.</param>
         private static async Task EnsureRoleExists(RoleManager<IdentityRole> roleManager, string roleName)
         {
-            if (!await roleManager.RoleExistsAsync(roleName))
+            if (await roleManager.RoleExistsAsync(roleName))
             {
-                await roleManager.CreateAsync(new IdentityRole(roleName));
+                return;
             }
+            await roleManager.CreateAsync(new IdentityRole(roleName));
         }
     }
 }

@@ -123,10 +123,18 @@ namespace Autopujcovna_DreamRide.Models
         [Display(Name = "Titulní fotka auta")]
         public string TitleCarImage { get; set; } = "";
 
-
         /// <summary>
         /// Navigační vlastnost Kolekce pro žádosti - pro specifikování, že existuje vazba mezi žádostí (request) a autem (car)
         /// </summary>
         public ICollection<Request> ?Requests { get; set; }
+
+        /// <summary>
+        /// Metoda, která vrácí základní informace o Autě
+        /// </summary>
+        /// <returns>Značka auta Model - např. Audi TT</returns>
+        public override string ToString()
+        {
+            return $"{Label} {Model}";
+        }
     }
 }

@@ -35,11 +35,11 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         /// <summary>
         /// Parametrický konstruktor, který čerpá hodnoty z instance třídy Car
         /// </summary>
-        public BriefCarViewModel(int id, string label, string model, string engineType, float engineDisplacement,
+        public BriefCarViewModel(int id, string title, string engineType, float engineDisplacement,
                int power, string transmission, string driveTrain, string titleCarImage)
         {
             CarId = id;
-            Title = label + " " + model;
+            Title = title;
             Engine = engineType + " " + engineDisplacement.ToString("0.0");
             Power = power;
             Transmission = transmission;

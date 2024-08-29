@@ -37,13 +37,13 @@ namespace Autopujcovna_DreamRide.Controllers
             var cars = await _context.Cars.ToListAsync(); // získání všech záznamů (aut) z tabulky Cars
             var briefCarViewModels = new List<BriefCarViewModel>();
 
-            // Získává na základě id z potřebného záznamu z tabulky [Cars] hodnoty atributů, které jsou nutné pro správné fungování a zobrazování jednotlivých aut v nabídce aut
+            /* Získává na základě id z potřebného záznamu z tabulky [Cars] hodnoty atributů,
+                které jsou nutné pro správné fungování a zobrazování jednotlivých aut v nabídce aut*/
             foreach (var car in cars)
             {
                 var briefCarViewModel = new BriefCarViewModel(
                         car.Id,
-                        car.Label,
-                        car.Model,
+                        car.ToString(),
                         car.EngineType,
                         car.EngineDisplacement,
                         car.PowerInKw,
@@ -77,7 +77,7 @@ namespace Autopujcovna_DreamRide.Controllers
                 return NotFound();
             }
             // Získává na základě id z potřebného záznamu z tabulky [Cars] hodnoty atributů, které jsou nutné pro správné fungování a zobrazování CarDetailsViewModelu
-            var CarDetail = new CarDetailViewModel(car.Id, car.Label, car.Model, car.TopSpeedKmForHour, car.PowerInKw,
+            var CarDetail = new CarDetailViewModel(car.Id, car.ToString(), car.TopSpeedKmForHour, car.PowerInKw,
                         car.Transmission, car.YearOfManufacture, car.EngineDisplacement, car.EngineType, car.DriveTrain, car.Fuel, car.Body, car.TitleCarImage);
 
             return View(CarDetail);
@@ -194,7 +194,7 @@ namespace Autopujcovna_DreamRide.Controllers
                 return NotFound();
             }
 
-            var briefCarInfo = new BriefCarViewModel (car.Id, car.Label, car.Model, car.EngineType,
+            var briefCarInfo = new BriefCarViewModel (car.Id, car.ToString(), car.EngineType,
                         car.EngineDisplacement, car.PowerInKw, car.Transmission, car.DriveTrain, car.TitleCarImage);
 
             return View(briefCarInfo);

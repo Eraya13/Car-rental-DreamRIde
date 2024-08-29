@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Autopujcovna_DreamRide.Models.ViewModels
@@ -63,5 +64,11 @@ namespace Autopujcovna_DreamRide.Models.ViewModels
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Do")]
         public DateTime EndDay { get; set; } = DateTime.Today;
+        
+        /// <summary>
+        /// Tento SelectList slouží pro dropdown výběr aut - v nabídce se zobrazuje název auta, na server stačí odeslat pouze id
+        /// Je v podstatě zjednodušený seznamem všech aut autopůjčovny - uchovává o každém autě nejpodstatnější informace
+        /// </summary>
+        public List<SelectListItem> ?Cars { get; set; }
     }
 }
