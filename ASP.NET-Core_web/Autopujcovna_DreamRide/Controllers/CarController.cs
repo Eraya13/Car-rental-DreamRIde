@@ -13,15 +13,37 @@ namespace Autopujcovna_DreamRide.Controllers
     /// Controller pro správu aut.
     /// </summary>
     [Authorize(Roles = UserRoles.Admin)]        // Užívám zde UserRoles, kdy jen Admin má přístup ke všem metodám CarsControlleru
-    public class CarsController : Controller
+    public class CarController : Controller
     {
+
+        /*
+         Poznámky ohledně nové implementace:
+
+        ICarManager interface
+        CarManager
+
+        // - udělat si rozhraní hlavně proto, že bude implementovat tyto "public" funkce a CarManager možná bude mít i nějaké private
+        funkce:
+        - Save()
+        - GetById()
+        - GetByName()
+        - Edit()
+        - Delete()
+        - GetAll()
+        
+        - je nutné si kompletně projít, co jde volat na akce s databází a kdy volat / nevolat async
+        
+
+        - nejdříve si ale implementovat to vypisování nabídky aut dle id do pohledu žádosti...
+         */
+
         private readonly AppDbContext _context;
 
         /// <summary>
-        /// Inicializuje novou instanci <see cref="CarsController"/> s poskytnutým kontextem databáze.
+        /// Inicializuje novou instanci <see cref="CarController"/> s poskytnutým kontextem databáze.
         /// </summary>
         /// <param name="context">Instance kontextu databáze.</param>
-        public CarsController(AppDbContext context)
+        public CarController(AppDbContext context)
         {
             _context = context;
         }

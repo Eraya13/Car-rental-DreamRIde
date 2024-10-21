@@ -187,7 +187,7 @@ namespace Autopujcovna_DreamRide.Controllers
         /// <returns>Přesměrování na stránku Cars -> Index.</returns>
         private IActionResult RedirectHome()
         {
-            return RedirectToAction(nameof(CarsController.Index), "Cars");
+            return RedirectToAction(nameof(CarController.Index), "Cars");
         }
     }
 }

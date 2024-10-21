@@ -21,15 +21,15 @@ namespace Autopujcovna_DreamRide.Controllers
     /// Tento kontroler obsahuje akce pro rezervaci auta a vytváření žádostí.
     /// Většina funkcionality je zatím ve vývoji.
     /// </summary>
-    public class RequestsController : Controller
+    public class RequestController : Controller
     {
         private readonly AppDbContext _context;
 
         /// <summary>
-        /// Inicializuje novou instanci <see cref="RequestsController"/> s poskytnutým kontextem databáze.
+        /// Inicializuje novou instanci <see cref="RequestController"/> s poskytnutým kontextem databáze.
         /// </summary>
         /// <param name="context">Instance kontextu databáze.</param>
-        public RequestsController(AppDbContext context)
+        public RequestController(AppDbContext context)
         {
             _context = context;
         }

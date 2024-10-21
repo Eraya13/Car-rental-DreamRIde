@@ -506,7 +506,11 @@ footer {
 }
 
 
-
+.container-title-car {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+}
 /* Containers + align content*/
 .container-flex-row {
     display: flex;
@@ -558,7 +562,7 @@ footer {
 .invitation-card {
     position: relative;
     width: 100%;
-    height: 80vh; /* Nastav pevnou výšku sekce */
+    height: 90vh; /* Nastav pevnou výšku sekce */
     overflow: hidden; /* Skryje části obrázku, které přesahují sekci */
 }
 
@@ -570,42 +574,40 @@ footer {
     }
 
 .h2-card {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-shadow: 4px 2px 3px rgba(0,0,0,0.7);
     -webkit-text-stroke: 1.0px black;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .text-on-card {
     position: absolute;
-    top: 25%;
-    left: 6rem;
+    top: 22%;
+    left: 8rem;
     transform: translateY(-50%);
     color: rgb(219, 218, 218);
     z-index: 1;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 400;
-    line-height: 1.4rem;
+    line-height: 1.6rem;
 }
 
 .p-card-effects {
-    -webkit-text-stroke: 0.2px black;
-    text-shadow: 4px 2px 3px rgba(0,0,0,0.7);
+    -webkit-text-stroke: 0.3px black;
+    text-shadow: 3px 4px 2px rgba(0,0,0,0.8);
 }
 
 /** Details-car bez tlačítek***/
 .img-car {
-    width: 100%;
-    min-width: 800px;
-    height: 60vh;
-    min-height: 500px;
+    max-width: 1300px;
+    min-height: 600px;
     object-fit: cover;
     object-position: center; /* Vycentruje obrázek v kontejneru */
     border: 2px solid white;
 }
 
 .img-icon {
-    height: 8rem;
+    height: 4rem;
     margin: 0.2rem 3rem; 
 }
 
@@ -616,24 +618,25 @@ footer {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 2rem;
+    gap: 3rem;
     margin: 5rem 0rem;
 }
 
     .grid-container h1 {
-        font-size: 2rem
+        font-size: 1.6rem
     }
+     
 
 .grid-tile {
     background: rgb(138, 136, 136);
     border: 4px solid white;
-    font-size: 1.4rem;
-    padding-left: 1rem;
+    font-size: 1.1rem;
+    padding-left: 1.1rem;
 }
 
 .grid-tile-value {
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 2rem;
     padding-left: 1rem;
     margin-left: 1rem;
 }
@@ -642,7 +645,7 @@ footer {
     font-family: Verdana;
     transform: skewX(-5deg);
     font-weight: 500;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     padding: 1rem;
     margin-bottom: 3rem;
     background-color: grey;

@@ -83,7 +83,7 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
                 });
 
             modelBuilder.Entity("Autopujcovna_DreamRide.Models.Client", b =>
@@ -118,7 +118,7 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
                 });
 
             modelBuilder.Entity("Autopujcovna_DreamRide.Models.Request", b =>
@@ -162,7 +162,7 @@ namespace Autopujcovna_DreamRide.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Requests");
+                    b.ToTable("Requests", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

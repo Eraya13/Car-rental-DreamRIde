@@ -1,7 +1,7 @@
 ﻿using Autopujcovna_DreamRide.Data;
 using Microsoft.EntityFrameworkCore;            // všechny tyto knihovny musí být přítomny!!!
 using Microsoft.AspNetCore.Identity;
-using Autopujcovna_DreamRide.Models;
+using Autopujcovna_DreamRide.Models;            // vždy zahrnout pokud chceme mít vlastní trídy služeb - např. Identity nebo EmailSender
 
 namespace Autopujcovna_DreamRide
 {
@@ -115,8 +115,8 @@ namespace Autopujcovna_DreamRide
                 UserManager<IdentityUser> userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
                 // Vytvoření rolí, pokud neexistují
-                //await EnsureRoleExists(roleManager, UserRoles.Admin);
-                //await EnsureRoleExists(roleManager, UserRoles.RequestManager);
+                await EnsureRoleExists(roleManager, UserRoles.Admin);
+                await EnsureRoleExists(roleManager, UserRoles.RequestManager);
             }
 
             app.Run();      // spuštění aplikace

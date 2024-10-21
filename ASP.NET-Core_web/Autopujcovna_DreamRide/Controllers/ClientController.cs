@@ -16,13 +16,13 @@ namespace Autopujcovna_DreamRide.Controllers
     /// Tento kontroler je momentálně stále ve vývoji a webová stránka ho nevyužívá, většina funkcí je zakomentována a nemusí fungovat
     /// Stejně tak pohledy Controlleru nejsou hotové a funkční
     /// </summary>
-    public class ClientsController : Controller
+    public class ClientController : Controller
     {
         private readonly AppDbContext _context;
 
         // předání reference na data z existující databáze - na tabulky
         // načtení dat z databáze pro práci s daty v databázi
-        public ClientsController(AppDbContext context)
+        public ClientController(AppDbContext context)
         {
             _context = context;
         }
